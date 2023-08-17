@@ -1,0 +1,19 @@
+<!-- Adapted from natron plugins 
+ Rebuilt for enve/friction by axiomgraph -->
+<ShaderEffect name="Tunnel" menuPath="Generate">
+    <Properties>
+        <Property name="iTime" nameUI="Time" type="float" min="0.0" max="10000.0" ini="1.0" step ="1.0" glValue="true"/>
+        <Property name="RAYMARCH_ITERATIONS" nameUI="Iterations" type="float" min="0.0" max="100.0" ini="60.0" step ="1.0" glValue="true"/>
+        <Property name="LINE_LENGTH" nameUI="Line Length" type="float" min="0.0" max="100.0" ini="1.0" step ="1.0" glValue="true"/>
+        <Property name="LINE_SPACE" nameUI="Line Space" type="float" min="0.0" max="100.0" ini="1.0" step ="1.0" glValue="true"/>
+        <Property name="LINE_WIDTH" nameUI="Line Width" type="float" min="0.0" max="100.0" ini="0.007" step ="1.0" glValue="true"/>
+        <Property name="BOUNDING_CYLINDER" nameUI="Bounding Cylinder" type="float" min="0.0" max="100.0" ini="1.8" step ="1.0" glValue="true"/>
+        <Property name="INSIDE_CYLINDER" nameUI="Inside Cylinder" type="float" min="0.0" max="100.0" ini="0.32" step ="1.0" glValue="true"/>
+        <Property name="FOG_DISTANCE" nameUI="Fog Distance" type="float" min="0.0" max="100.0" ini="30.0" step ="0.1" glValue="true"/>
+        <Property name="col1" nameUI="Color 1" type="color" ini="[1.0, 0.5, 0.2,1.0]" step ="0.1" glValue="true"/>
+        <Property name="SECOND_COLOR" nameUI="Color 2" type="color" ini="[0.2, 0.8, 1.0,1.0]" step ="0.1" glValue="true"/>
+    </Properties>
+    <glValues>
+        <glValue name="resolution" type="vec2" value="[_eRect[2], _eRect[3]]"/>
+    </glValues>
+</ShaderEffect>

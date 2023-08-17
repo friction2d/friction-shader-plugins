@@ -1,7 +1,8 @@
 /* Adapted from https://www.shadertoy.com/view/wsGSRz  Shader License: CC BY 3.0
 //Author: Jan Mróz (jaszunio15)
 Rebuilt for enve by axiomgraph
-// Opengl version 3.3*/
+// Opengl version 3.3 */
+
 #version 330 core
 
 #define PI 3.14159265359
@@ -45,7 +46,6 @@ vec3 hash33(vec3 x)
 {
  	return fract(sin(x * mat3x3(23.421, 24.4217, 25.3271, 27.2412, 32.21731, 21.27641, 20.421, 27.4217, 22.3271)) * 342.324234);   
 }
-
 
 mat3x3 rotationMatrix(vec3 angle)
 {
@@ -152,7 +152,6 @@ vec4 objectSDF(vec3 point)
  	return vec4(lines.rgb, object);
 }
 
-
 vec3 rayMarch(vec3 rayOrigin, vec3 rayDirection, out vec3 color)
 {
     color = vec3(0.0);
@@ -169,7 +168,7 @@ vec3 rayMarch(vec3 rayOrigin, vec3 rayDirection, out vec3 color)
 
     return rayOrigin;
 }
- 
+
 void main( void)
 {
 	vec3 cameraCenter = vec3(0.0, 0.0, -TIME * 10.0);
