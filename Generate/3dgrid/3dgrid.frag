@@ -1,6 +1,7 @@
 /* Adapted from Natron  "Adapted to Natron by F.Fernandez
 // Original code : crok_3d_grid Matchbox for Autodesk Flame"
-// Opengl version 3.3*/
+// Opengl version 3.3 */
+
 #version 330 core
 
 #define PI 3.14159265359
@@ -32,8 +33,6 @@ uniform float z; // = 1.0; // Speed z : (depth speed adjustments), min=-10000, m
 
 uniform vec2 center; // = vec2( 0.5 , 0.5 ); // Center : (adjust the center of the grid)
 uniform float zoom; // = 1.0; // Zoom : (zoom in/out of the grid), min=-10000, max=10000
-
-
 
 float time = iTime *.05 * Speed + Offset;
 
