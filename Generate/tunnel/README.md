@@ -1,8 +1,14 @@
+---
+title: "Tunnel"
+layout: default
+permalink: documentation/shaders/tunnel
+---
+
 # Tunnel
 
 Flying into digital tunnel effect.
 
-![Screenshot](screenshot.jpg)
+![Screenshot](/documentation/shaders/Generate/tunnel/screenshot.jpg)
 
 ## Parameters
 

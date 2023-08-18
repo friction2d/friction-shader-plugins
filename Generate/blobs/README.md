@@ -1,8 +1,14 @@
+---
+title: "Blobs"
+layout: default
+permalink: documentation/shaders/blobs
+---
+
 # Blobs
 
 Creates blob like structures.
 
-![Screenshot](screenshot.jpg)
+![Screenshot](/documentation/shaders/Generate/blobs/screenshot.jpg)
 
 ## Parameters
 

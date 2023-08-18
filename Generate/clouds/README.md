@@ -1,8 +1,14 @@
+---
+title: "Clouds"
+layout: default
+permalink: documentation/shaders/clouds
+---
+
 # Clouds
 
 Creates a sky with clouds effect.
 
-![Screenshot](screenshot.jpg)
+![Screenshot](/documentation/shaders/Generate/clouds/screenshot.jpg)
 
 ## Parameters
 

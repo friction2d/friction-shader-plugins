@@ -1,8 +1,14 @@
+---
+title: "3D Grid"
+layout: default
+permalink: documentation/shaders/3dgrid
+---
+
 # 3D Grid
 
 This effect creates a 3D Grid.
 
-![Screenshot](screenshot.jpg)
+![Screenshot](/documentation/shaders/Generate/3dgrid/screenshot.jpg)
 
 ## Fractal
 

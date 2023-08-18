@@ -1,8 +1,14 @@
+---
+title: "Wave Lines"
+layout: default
+permalink: documentation/shaders/wavelines
+---
+
 # Wave Lines
 
 Creates a wave line pattern.
 
-![Screenshot](screenshot.jpg)
+![Screenshot](/documentation/shaders/Generate/wavelines/screenshot.jpg)
 
 ## Parameters
 

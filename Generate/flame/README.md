@@ -1,8 +1,14 @@
+---
+title: "Flame"
+layout: default
+permalink: documentation/shaders/flame
+---
+
 # Flame
 
 Creates flame / fluid like patterns.
 
-![Screenshot](screenshot.jpg)
+![Screenshot](/documentation/shaders/Generate/flame/screenshot.jpg)
 
 ## Parameters
 
