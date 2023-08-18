@@ -1,5 +1,6 @@
 ---
 title: "3D Grid"
+description: "This effect creates a 3D Grid."
 layout: default
 permalink: documentation/shaders/3dgrid
 ---

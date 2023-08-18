@@ -1,5 +1,6 @@
 ---
 title: "Clouds"
+description: "Creates a sky with clouds effect."
 layout: default
 permalink: documentation/shaders/clouds
 ---

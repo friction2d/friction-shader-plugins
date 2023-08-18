@@ -1,5 +1,6 @@
 ---
 title: "Blobs"
+description: "Creates blob like structures."
 layout: default
 permalink: documentation/shaders/blobs
 ---

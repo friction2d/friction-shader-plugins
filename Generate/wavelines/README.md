@@ -1,5 +1,6 @@
 ---
 title: "Wave Lines"
+description: "Creates a wave line pattern."
 layout: default
 permalink: documentation/shaders/wavelines
 ---

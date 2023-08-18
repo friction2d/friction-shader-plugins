@@ -1,5 +1,6 @@
 ---
 title: "Flame"
+description: "Creates flame / fluid like patterns."
 layout: default
 permalink: documentation/shaders/flame
 ---

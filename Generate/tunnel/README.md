@@ -1,5 +1,6 @@
 ---
 title: "Tunnel"
+description: "Flying into digital tunnel effect."
 layout: default
 permalink: documentation/shaders/tunnel
 ---
