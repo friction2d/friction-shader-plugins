@@ -21,7 +21,7 @@ cmake_minimum_required(VERSION 3.0)
 project(friction-shader-plugins)
 include(GNUInstallDirs)
 
-set(FX_GENERATORS "3dgrid;tunnel")
+set(FX_GENERATORS "3dgrid;tunnel;flame;clouds;wavelines;blobs")
 foreach(FX_GENERATOR ${FX_GENERATORS})
     install(
         FILES

@@ -1,8 +1,9 @@
 // Adapted from natron plugins "
 // (Adapted to Natron by F.Fernandez
 // Original code : crok_lava Matchbox for Autodesk Flame)"
-// Rebuilt for enve by axiomgraph
+// Rebuilt for enve/friction by axiomgraph
 // Opengl version 3.3
+
 #version 330 core
 layout(location = 0) out vec4 fragColor;
 uniform sampler2D texture;
@@ -10,7 +11,7 @@ uniform vec2 scenePos;
 in vec2 texCoord;
 
 uniform float iTime;
-uniform vec2 timing = vec2(4.5,0.0); // x:speed y=offset : 
+uniform vec2 timing = vec2(4.5,0.0); // x:speed y=offset :
 uniform vec2 pattern; // x:detail y=noise
 
 uniform float Zoom; // Zoom : (zoom), min=0.01, max=50
@@ -22,11 +23,11 @@ uniform float tint; // Tint intensity : (tint intensity), min=0.0, max=1.0
 
 bool clamp_g = false; // Clamp : (clamp)
 
-uniform vec3 co0 = vec3(1.0,2.3,0.8); // Colour 1 : 
-uniform vec3 co1 = vec3(2.1,0.5,0.5); // Colour 2 : 
-uniform vec3 co2 = vec3(0.0,0.0,0.0); // Colour 3 :  
-uniform vec3 co3 = vec3(1.5,-1.2,-1.3); // Colour 4 : 
-uniform vec3 co4 = vec3(3.0,0.0,0.0); // Colour 5 :  
+uniform vec3 co0 = vec3(1.0,2.3,0.8); // Colour 1 :
+uniform vec3 co1 = vec3(2.1,0.5,0.5); // Colour 2 :
+uniform vec3 co2 = vec3(0.0,0.0,0.0); // Colour 3 :
+uniform vec3 co3 = vec3(1.5,-1.2,-1.3); // Colour 4 :
+uniform vec3 co4 = vec3(3.0,0.0,0.0); // Colour 5 :
 
 uniform vec3 tint_col = vec3(3.8,0.8,-0.8); // Tint colour : (tint colour)
 
@@ -53,7 +54,6 @@ float hash( float n )
 {
     return fract(sin(n)*43758.5453);
 }
-
 
 float noise( in vec3 x )
 {
@@ -108,7 +108,7 @@ vec4 gradient(float x)
 	} else if (x < 0.75) {
 		c = mix(c2, c3, t);
 	} else {
-		c = mix(c3, c4, t);		
+		c = mix(c3, c4, t);
 	}
 	return c;
 }
@@ -118,7 +118,6 @@ vec4 shade(float d)
 	vec4 c = gradient(d);
 	return c;
 }
-
 
 vec4 volumeFunc(vec3 p)
 {
@@ -134,7 +133,7 @@ vec4 rayMarch(vec3 rayOrigin, vec3 rayStep, out vec3 pos)
 		vec4 col = volumeFunc(pos);
 		col.a *= Density;
 		col.rgb *= col.a;
-		sum = sum + col*(1.0 - sum.a);	
+		sum = sum + col*(1.0 - sum.a);
 		pos += rayStep;
 	}
 	return sum;

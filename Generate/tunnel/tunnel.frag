@@ -1,6 +1,6 @@
 /* Adapted from https://www.shadertoy.com/view/wsGSRz  Shader License: CC BY 3.0
 //Author: Jan Mróz (jaszunio15)
-Rebuilt for enve by axiomgraph
+Rebuilt for enve/friction by axiomgraph
 // Opengl version 3.3 */
 
 #version 330 core

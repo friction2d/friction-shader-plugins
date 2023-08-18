@@ -1,22 +1,18 @@
 <!-- Adapted from natron project
  Rebuilt for enve by axiomgraph 
 -->
-<ShaderEffect name="Cloudy sky" menuPath="Generate">
+<ShaderEffect name="Clouds" menuPath="Generate">
     <Properties>
      <Property name="iTime" nameUI="Time" type="float" min="0.0" max="10000.0" ini="1.1" step ="1.0" glValue="true"/>
       <Property name="cloudscale" nameUI="Cloud Scale" type="float" min="0.0" max="2.0" ini="1.1" step ="0.1" glValue="true"/>
       <Property name="speed" nameUI="Speed" type="float" min="0.0" max="1.0" ini="0.03" step ="0.1" glValue="true"/>
       <Property name="clouddark" nameUI="Cloud Dark" type="float" min="0.0" max="1.0" ini="0.5" step ="0.1" glValue="true"/>
       <Property name="cloudlight" nameUI="Cloud Light" type="float" min="0.0" max="1.0" ini="0.3" step ="0.1" glValue="true"/>
-
       <Property name="cloudcover" nameUI="Cloud Cover" type="float" min="0.0" max="1.0" ini="0.2" step ="0.1" glValue="true"/>
       <Property name="cloudalpha" nameUI="Cloud Alpha" type="float" min="0.0" max="10.0" ini="8.0" step ="0.1" glValue="true"/>
       <Property name="skytint" nameUI="Sky Tint" type="float" min="0.0" max="10.0" ini="0.5" step ="0.1" glValue="true"/>
-     
       <Property name="skycolour1" nameUI="Sky Color 1" type="color" ini="[0.2,0.4,0.6,1.0]" glValue="true"/>
-
       <Property name="skycolour2" nameUI="Sky Color 2" type="color" ini="[0.4,0.7,1.0,1.0]" glValue="true"/>
-      
       </Properties>
      <glValues>
         <glValue name="scenePos"  type="vec2" value="[_eRect[2], _eRect[3]]"/>

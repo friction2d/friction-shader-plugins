@@ -1,11 +1,6 @@
-# Friction Shader Plug-ins (WIP!)
+# Friction Shaders Effects
 
-More information will be added soon.
-
-
-## Generate
-
-Effect generators.
+## Generators
 
 ### 3D Grid
 
@@ -14,3 +9,19 @@ Effect generators.
 ### Tunnel
 
 [![tunnel](Generate/tunnel/screenshot.jpg)](Generate/tunnel/README.md)
+
+### Flame
+
+[![flame](Generate/flame/screenshot.jpg)](Generate/flame/README.md)
+
+### Clouds
+
+[![clouds](Generate/clouds/screenshot.jpg)](Generate/clouds/README.md)
+
+### Wave Lines
+
+[![wavelines](Generate/wavelines/screenshot.jpg)](Generate/wavelines/README.md)
+
+### Blobs
+
+[![blobs](Generate/blobs/screenshot.jpg)](Generate/blobs/README.md)

@@ -1,4 +1,4 @@
-# Crok 3D Grid
+# 3D Grid
 
 This effect creates a 3D Grid.
 

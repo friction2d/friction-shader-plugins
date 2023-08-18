@@ -4,7 +4,6 @@
 
 #version 330
 
-
 layout(location = 0) out vec4 fragColor;
 layout(origin_upper_left) in vec4 gl_FragCoord;
 

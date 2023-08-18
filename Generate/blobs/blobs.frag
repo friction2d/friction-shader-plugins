@@ -3,6 +3,7 @@
 // Original code : crok_blobs Matchbox for Autodesk Flame"
 // Rebuilt for enve by axiomgraph
 // Opengl version 3.3
+
 #version 330 core
 layout(location = 0) out vec4 fragColor;
 uniform sampler2D texture;
@@ -25,10 +26,7 @@ uniform vec4 Depth;
 
 float Time = iTime *-.05 * Speed + Offset;
 
-
-
 uniform vec2 Camera;
-
 
 const float pi = 3.14159;
 
@@ -145,7 +143,7 @@ float snoise(vec3 v)
   return 42.0 * dot( m*m, vec4( dot(p0,x0), dot(p1,x1), 
                                 dot(p2,x2), dot(p3,x3) ) );
   }
-  
+
 void main(void)
 {
 
