@@ -1,0 +1,13 @@
+<!-- Adapted from https://www.shadertoy.com/view/ldVBDD
+ Rebuilt for enve/friction by axiomgraph-->
+<ShaderEffect name="Electronic Clock" menuPath="Generate">
+    <Properties>
+      <Property name="hours" nameUI="Hours" type="float" min="0" max="24.0" ini="12.0" step ="1.0" glValue="true"/>
+      <Property name="minutes" nameUI="Minutes" type="float" min="0" max="60.0" ini="10.0" step ="1.0" glValue="true"/>
+      <Property name="seconds" nameUI="Seconds" type="float" min="0" max="60.0" ini="20.0" step ="1.0" glValue="true"/>
+       <Property name="color" nameUI="Color" type="color"  ini="[0.4, 0.2, 1.0,1.0]" glValue="true"/>
+      </Properties>
+    <glValues>
+      <glValue name="resolution"  type="vec2" value="[_eRect[2], _eRect[3]]"/>
+    </glValues>   
+</ShaderEffect>

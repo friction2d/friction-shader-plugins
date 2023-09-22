@@ -1,0 +1,22 @@
+<!-- Credit : https://www.shadertoy.com/view/MdfGzf
+ Rebuilt for enve by axiomgraph-->
+<ShaderEffect name="Digital Clock" menuPath="Generate">
+    <Properties>
+ <!--   <Property name="iTime" nameUI="Time" type="float" min="0.0" max="10000.0" ini="1.0" step ="1.0" glValue="false"/>  -->
+      <Property name="Hours" nameUI="Hours" type="int" min="0" max="59" ini="2" step ="1" glValue="true"/>       
+      <Property name="Minutes" nameUI="Minutes" type="int" min="0" max="60" ini="1" step ="1" glValue="true"/>  
+       <Property name="Seconds" nameUI="Seconds" type="int" min="0" max="60" ini="1" step ="1" glValue="true"/>  
+       
+      <!-- boolean --> 
+       <Property name="AMPM" nameUI="AM/PM" type="int" min="0" max="1" ini="0" step ="1" glValue="true"/>  
+       <Property name="redgreen" nameUI="Green" type="int" min="0" max="1" ini="0" step ="1" glValue="true"/>   
+       <Property name="microwavestyle" nameUI="Blue" type="int" min="0" max="1" ini="0" step ="1" glValue="true"/>
+       <Property name="showOffLed" nameUI="Show Off LED" type="int" min="0" max="1" ini="0" step ="1" glValue="true"/>  
+            
+       
+       
+      </Properties>
+    <glValues>
+      <glValue name="resolution"  type="vec2" value="[_eRect[2], _eRect[3]]"/>
+    </glValues>   
+</ShaderEffect>

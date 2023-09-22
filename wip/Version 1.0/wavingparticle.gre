@@ -1,0 +1,17 @@
+<!-- Adapted from  https://www.shadertoy.com/view/ttB3Rt  
+ Rebuilt for enve/friction by axiomgraph-->
+<ShaderEffect name="Waving Particle" menuPath="Generate">
+    <Properties>
+      <Property name="iTime" nameUI="Time" type="float" min="0.0" max="24.0" ini="12.0" step ="1.0" glValue="true"/>
+      <Property name="randomsize" nameUI="Random Size" type="int" min="0" max="1" ini="1" step ="1" glValue="true"/>
+      <Property name="PARTICLE_ITERATIONS" nameUI="Particle Iterations" type="float" min="0.0" max="20.0" ini="6.0" step ="1.0" glValue="true"/>
+     <Property name="PARTICLE_RADIUS" nameUI="Particle Radius" type="float" min="0.0" max="20.0" ini="0.15" step ="0.01" glValue="true"/> 
+     <Property name="PARTICLE_RADIUS2" nameUI="Particle Radius 2" type="float" min="0.0" max="20.0" ini="0.3" step ="0.01" glValue="true"/> 
+     <Property name="PARTICLE_SIZE_VARIATION" nameUI="Particle Size Variation" type="float" min="0.0" max="20.0" ini="0.2" step ="0.01" glValue="true"/> 
+     <Property name="PARTICLE_COLOR" nameUI="Particle Color" type="color"  ini="[0.3, 0.9, 0.9,1.0]"  glValue="true"/> 
+     <Property name="BRIGHTNESS" nameUI="Brightness" type="float" min="0.0" max="10.0" ini="0.45" step ="0.01" glValue="true"/>     
+      </Properties>
+    <glValues>
+      <glValue name="resolution"  type="vec2" value="[_eRect[2], _eRect[3]]"/>
+    </glValues>   
+</ShaderEffect>

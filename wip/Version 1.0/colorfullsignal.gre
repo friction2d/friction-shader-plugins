@@ -1,0 +1,15 @@
+<!-- Adapted from https://godotshaders.com/shader/colorful-signal-effect/
+ Rebuilt for enve/friction by axiomgraph-->
+<ShaderEffect name="Color Signal" menuPath="Generate">
+    <Properties>
+           <Property name="time" nameUI="Time" type="float" min="-999.0" max="999.0" ini="0.1" step ="0.1" glValue="true"/> 
+           <Property name="color_signal" nameUI="Color" type="color"  ini="[1.0,1.0,1.0,1.0]" step ="0.01" glValue="true"/> 
+           <Property name="size" nameUI="Size" type="float" min="0.0" max="1.0" ini="0.2" step ="0.01" glValue="true"/> 
+           <Property name="zoom" nameUI="Zoom" type="float" min="0.0" max="20.0" ini="8.0" step ="1.0" glValue="true"/> 
+           <Property name="speed" nameUI="speed" type="float" min="-10.0" max="10.0" ini="1.0" step ="1.0" glValue="true"/> 
+            <Property name="RainBow" nameUI="Rain Bow" type="int" min="0" max="1" ini="1" step ="1" glValue="true"/> 
+    </Properties> 
+    <glValues>
+      <glValue name="resolution"  type="vec2" value="[_eRect[2], _eRect[3]]"/>
+    </glValues>   
+</ShaderEffect>

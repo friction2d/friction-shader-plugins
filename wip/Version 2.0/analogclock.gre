@@ -1,0 +1,12 @@
+<!-- Adapted from https://www.shadertoy.com/view/DtScWV
+ Rebuilt for enve by axiomgraph-->
+<ShaderEffect name="Analog Clock" menuPath="Generate">
+    <Properties>
+      <Property name="hours" nameUI="Hours" type="float" min="-1000.0" max="1000.0" ini="12.0" step ="1.0" glValue="true"/>
+      <Property name="minutes" nameUI="Minutes" type="float" min="-1000.0" max="6000.0" ini="10.0" step ="1.0" glValue="true"/>
+      <Property name="seconds" nameUI="Seconds" type="float" min="-1000.0" max="6000.0" ini="20.0" step ="1.0" glValue="true"/>
+      </Properties>
+    <glValues>
+      <glValue name="resolution"  type="vec2" value="[_eRect[2], _eRect[3]]"/>
+    </glValues>   
+</ShaderEffect>

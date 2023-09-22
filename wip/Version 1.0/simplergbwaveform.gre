@@ -1,0 +1,10 @@
+<!-- Adapted from https://www.shadertoy.com/view/4dK3Wc
+ Rebuilt for enve by axiomgraph-->
+<ShaderEffect name="Simple RGB Wave Form" menuPath="Generate">
+    <Properties>   
+     <!-- <Property name="waveform_scale" nameUI="Scale" type="float" min="0.0" max="100.0" ini="1.0" step ="1.0" glValue="true"/> -->
+      </Properties>
+    <glValues>
+      <glValue name="resolution"  type="vec2" value="[_eRect[2], _eRect[3]]"/>
+    </glValues>   
+</ShaderEffect>

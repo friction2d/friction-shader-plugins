@@ -1,0 +1,16 @@
+<!-- Adapted from https://github.com/gl-transitions/gl-transitions/blob/master/transitions/DoomScreenTransition.glsl
+License: MIT
+ Rebuilt for enve/friction by axiomgraph-->
+<ShaderEffect name="Doom Screen" menuPath="Transitions">
+    <Properties>
+            <Property name="progress" nameUI="Progress" type="float" min="0.0" max="1.0" ini="0.01" step ="0.01" glValue="true"/>
+            <Property name="bars" nameUI="Bars" type="int" min="0" max="100" ini="30" step ="1" glValue="true"/>
+            <Property name="amplitude" nameUI="Amplitude" type="float" min="0.0" max="100.0" ini="2.0" step ="0.1" glValue="true"/>
+           <Property name="noise" nameUI="Noise" type="float" min="0.0" max="1.0" ini="0.1" step ="0.01" glValue="true"/>
+            <Property name="frequency" nameUI="Frequency" type="float" min="0.0" max="10.0" ini="0.5" step ="0.01" glValue="true"/>
+            <Property name="dripScale" nameUI="Drip Scale" type="float" min="0.0" max="10.0" ini="0.5" step ="0.01" glValue="true"/>
+      </Properties>
+        <glValues>
+      <glValue name="resolution"  type="vec2" value="[_eRect[2], _eRect[3]]"/>
+    </glValues>   
+   </ShaderEffect>

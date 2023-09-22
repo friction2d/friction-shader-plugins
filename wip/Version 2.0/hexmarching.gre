@@ -1,0 +1,12 @@
+<!-- Credit : https://www.shadertoy.com/view/NdKyDw Hex Marching
+ Rebuilt for enve by axiomgraph-->
+<ShaderEffect name="Hex Marching" menuPath="Generate">
+    <Properties>
+      <Property name="time" nameUI="Time" type="float" min="0.0" max="10000.0" ini="1.0" step ="1.0" glValue="true"/>       
+      <Property name="BPM" type="float" min="0.0" max="10000.0" ini="50.0" step ="1.0" glValue="true"/>
+      <Property name="scale" nameUI="Scale" type="float" min="0.0" max="10000.0" ini="2.0" step ="1.0" glValue="true"/>
+      </Properties>
+    <glValues>
+      <glValue name="resolution"  type="vec2" value="[_eRect[2], _eRect[3]]"/>
+    </glValues>   
+</ShaderEffect>

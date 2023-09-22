@@ -1,0 +1,19 @@
+<!-- Adapted from  https://www.shadertoy.com/view/Dds3WB
+ Rebuilt for enve by axiomgraph-->
+<ShaderEffect name="Tube Clock" menuPath="Generate">
+    <Properties>
+      <Property name="hours" nameUI="Hours" type="int" min="0" max="24" ini="10" step ="1" glValue="true"/>
+      <Property name="minutes" nameUI="Minutes" type="int" min="0" max="60" ini="10" step ="1" glValue="true"/>
+      
+     
+      <Property name="TWELVE_HOUR" nameUI="12 Hours" type="int" min="0" max="1" ini="1" step ="1" glValue="true"/>
+      <Property name="colour" nameUI="Color" type="color"  ini="[1.0,0.2,0.0,1.0]" glValue="true"/>
+      <Property name="time" nameUI="Glow Time" type="float" min="0.0" max="100000.0" ini="20.0" step ="1.0" glValue="true"/>
+      <Property name="glow" nameUI="Glow" type="int" min="0" max="1" ini="1" step ="1" glValue="true"/>
+      <Property name="shgrid" nameUI="Grid" type="int" min="0" max="1" ini="1" step ="1" glValue="true"/>
+      
+      </Properties>
+    <glValues>
+      <glValue name="resolution"  type="vec2" value="[_eRect[2], _eRect[3]]"/>
+    </glValues>   
+</ShaderEffect>

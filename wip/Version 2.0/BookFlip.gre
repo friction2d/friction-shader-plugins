@@ -1,0 +1,8 @@
+<!-- Adapted from https://github.com/gl-transitions/gl-transitions/blob/master/transitions/BookFlip.glsl
+License: MIT
+ Rebuilt for enve/friction by axiomgraph-->
+<ShaderEffect name="Book Flip" menuPath="Transitions">
+    <Properties>
+            <Property name="progress" nameUI="Progress" type="float" min="0.0" max="1.0" ini="0.01" step ="0.01" glValue="true"/>
+      </Properties>     
+   </ShaderEffect>
