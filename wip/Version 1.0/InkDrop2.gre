@@ -1,0 +1,11 @@
+<!-- Adapted from https://www.shadertoy.com/view/3tGyWm Author : dtsmio 
+ Adapted for enve/friction by axiomgraph-->
+<ShaderEffect name="Ink Drop 2" menuPath="Transitions">
+    <Properties>
+      <Property name="shape" nameUI="Shape" type="float" min="0.0" max="1000.0" ini="1.0" step ="0.01" glValue="true"/> 
+       <Property name="size" nameUI="Size" type="float" min="0.0" max="1000.0" ini="0.5" step ="0.01" glValue="true"/> 
+      </Properties>
+    <glValues>
+      <glValue name="resolution"  type="vec2" value="[_eRect[2], _eRect[3]]"/>
+    </glValues> 
+</ShaderEffect>

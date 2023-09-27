@@ -1,0 +1,24 @@
+<!-- Adapted from https://godotshaders.com/shader/god-rays/ Author : pend00
+ Adapted for enve/friction by axiomgraph-->
+<ShaderEffect name="God Rays" menuPath="Light And Shadow">
+    <Properties>
+    <Property name="time" nameUI="Time" type="float" min="-1000.0" max="1000.0" ini="1.0" step ="1.0" glValue="true"/> 
+      <Property name="angle" nameUI="Angle" type="float" min="-1000.0" max="1000.0" ini="-0.3" step ="0.01" glValue="true"/> 
+       <Property name="position" nameUI="Position" type="float" min="-1000.0" max="1000.0" ini="-0.2" step ="0.01" glValue="true"/> 
+       <Property name="spread" nameUI="Spread" type="float" min="0.0" max="1.0" ini="0.5" step ="0.01" glValue="true"/> 
+       
+       <Property name="cutoff" nameUI="Cutoff" type="float" min="-1.0" max="10.0" ini="0.1" step ="0.01" glValue="true"/> 
+       <Property name="falloff" nameUI="Falloff" type="float" min="0.0" max="10.0" ini="0.2" step ="0.01" glValue="true"/> 
+       <Property name="edge_fade" nameUI="Edge Fade" type="float" min="0.0" max="1.0" ini="0.15" step ="0.01" glValue="true"/> 
+       <Property name="speed" nameUI="Speed" type="float" min="0.0" max="100.0" ini="1.0" step ="0.1" glValue="true"/> 
+       
+       <Property name="ray1_density" nameUI="Ray 1 Density" type="float" min="0.0" max="1000.0" ini="8.0" step ="0.01" glValue="true"/> 
+        <Property name="ray2_density" nameUI="Ray 2 Density" type="float" min="0.0" max="1000.0" ini="30.0" step ="0.1" glValue="true"/> 
+       <Property name="ray2_intensity" nameUI="Ray 2 Intensity" type="float" min="0.0" max="1.0" ini="0.3" step ="0.01" glValue="true"/> 
+       
+       <Property name="color" nameUI="Color" type="color"  ini="[1.0, 0.9, 0.65, 0.8]" glValue="true"/> 
+        
+        <Property name="hdr" nameUI="HDR" type="int" min="0" max="1" ini="0" step ="1" glValue="true"/> 
+        <Property name="seed" nameUI="Seed" type="float" min="0.0" max="1000.0" ini="5.0" step ="1.0" glValue="true"/>         
+      </Properties>
+  </ShaderEffect>
