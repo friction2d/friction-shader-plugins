@@ -1,0 +1,23 @@
+<!-- Adapted from https://godotshaders.com/shader/waveforms/ Author : pend00
+ Adapted for enve/friction by axiomgraph-->
+<ShaderEffect name="Waveforms" menuPath="Generate">
+    <Properties>
+	<Property name="time" nameUI="Time" type="float" min="-1.0" max="1000.0" ini="0.5" step ="0.01" glValue="true"/> 
+	<Property name="lines" nameUI="Lines" type="int" min="9" max="1000" ini="80" step ="1" glValue="true"/>
+	<Property name="amplitude" nameUI="Amplitude" type="float" min="0.0" max="1.0" ini="0.9" step ="0.01" glValue="true"/>
+	<Property name="frequency" nameUI="Frequency" type="float" min="0.0" max="0.5" ini="0.1" step ="0.01" glValue="true"/> 
+	<Property name="intensity" nameUI="Intensity" type="float" min="0.0" max="1.0" ini="0.75" step ="0.01" glValue="true"/>  	
+	<Property name="line_sharpness" nameUI="Line sharpness" type="float" min="0.0" max="1.0" ini="0.5" step ="0.01" glValue="true"/>
+	<Property name="line_size" nameUI="Line Size" type="float" min="0.0" max="1.0" ini="0.8" step ="0.01" glValue="true"/>
+	<Property name="fade" nameUI="Fade" type="float" min="0.0" max="0.5" ini="0.1" step ="0.01" glValue="true"/>  
+	<Property name="rest_size" nameUI="Rest Size" type="float" min="-2.0" max="2.0" ini="-0.2" step ="0.01" glValue="true"/>
+	<Property name="edge" nameUI="Edge" type="float" min="0.0" max="0.5" ini="0.05" step ="0.01" glValue="true"/>
+	<Property name="speed" nameUI="Speed" type="float" min="0.0" max="100.0" ini="0.5" step ="0.01" glValue="true"/>
+	<Property name="color" nameUI="Color" type="color"  ini="[0.8, 0.25, 0.5, 1.0]" glValue="true"/>	
+	<Property name="dot_matrix" nameUI="Dot Matrix" type="int" min="0" max="1" ini="0" step ="1" glValue="true"/>	
+	<Property name="dot_matriz_size" nameUI="Dot Matrix Size" type="int" min="0" max="500" ini="100" step ="1" glValue="true"/> 
+	<Property name="speech_sim" nameUI="Speech Simulate" type="int" min="0" max="1" ini="1" step ="1" glValue="true"/>	
+	<Property name="speech_intensity" nameUI="Speech Intensity" type="float" min="0.0" max="2.0" ini="0.8" step ="0.01" glValue="true"/>
+	<Property name="progress" nameUI="Progress" type="float" min="0.0" max="1.0" ini="1.0" step ="0.01" glValue="true"/> 				  				 				  			
+      </Properties>
+</ShaderEffect>

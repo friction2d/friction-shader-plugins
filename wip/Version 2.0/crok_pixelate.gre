@@ -1,0 +1,14 @@
+<!-- Adapted from natron plugins 
+Adapted to Natron by F.Fernandez
+Original code : crok_pixelate Matchbox for Autodesk Flame
+Adapted for enve/friction by axiomgraph-->
+<ShaderEffect name="Pixelate" menuPath="Stylize">
+    <Properties>
+	<Property name="Detail" nameUI="Detail"  type="float" min="0.0" max="500.0" ini="70.0" step ="1.0" glValue="true"/>
+	<Property name="Aspect" nameUI="Aspect Ratio"  type="int" min="0" max="1" ini="1" step ="1" glValue="true"/>  
+			  				  		  				
+    </Properties>
+    <glValues>
+	<glValue name="resolution"  type="vec2" value="[_eRect[2], _eRect[3]]"/>
+    </glValues>   
+</ShaderEffect>

@@ -1,16 +1,14 @@
 <!-- Adapted from Olive video editor project
- Rebuilt for enve by axiomgraph-->
+ Adapted for enve/friction by axiomgraph-->
 <ShaderEffect name="Ripple" menuPath="Distort">
-    <Properties>
-      <Property name="evolution_in" nameUI="Evolution" type="float" min="0.0" max="10000.0" ini="1.0" step ="1.0" glValue="true"/>
-      <Property name="intensity_in" nameUI="Intensity" type="float" min="0.0" max="100.0" ini="5.0" step ="1.0" glValue="true"/>
-            <Property name="frequency_in" nameUI="Frequency" type="float" min="0.0" max="100.0" ini="5.0" step ="1.0" glValue="true"/>
-         <Property name="position_in" nameUI="Origin" type="vec2" min="-100.0" max="100.0" ini="5.0" step ="1.0" glValue="true"/>
-  </Properties>
-  <Script>
-        <Calculate>
-            extern displScaled = frequency_in*intensity_in;
-        </Calculate>
-    </Script>
-  <Margin value="displScaled"/>  
+	<Properties>
+		<Property name="evolution_in" nameUI="Time" type="float" min="0.0" max="10000.0" ini="1.0" step ="1.0" glValue="true" resolutionScaled="true"/>
+		<Property name="intensity_in" nameUI="Intensity" type="float" min="0.0" max="100.0" ini="5.0" step ="1.0" glValue="true"/>
+		<Property name="frequency_in" nameUI="Frequency" type="float" min="0.0" max="100.0" ini="5.0" step ="1.0" glValue="true"/>
+		<Property name="position_in" nameUI="Origin" type="vec2" min="-9999.0" max="9999.0" ini="0.0" step ="10.0" glValue="true"/>
+	</Properties>
+	<glValues>
+		<glValue name="resolution"  type="vec2" value="[_eRect[2], _eRect[3]]"/>
+	</glValues>    
+		<Margin value="evolution_in"/>  
 </ShaderEffect>

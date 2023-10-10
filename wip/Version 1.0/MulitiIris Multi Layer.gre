@@ -1,0 +1,27 @@
+<!-- Adapted from natron plugins Author : CGVIRUS
+ Adapted for enve/friction by axiomgraph-->
+<ShaderEffect name="Multitilris Multilayer" menuPath="Light And Shadow">
+    <Properties>
+	<Property name="Position" nameUI="Position" xnameUI="Position X" ynameUI="Position Y" type="vec2" min="-9999.0" max="9999.0" ini="0.0" step ="10.0" glValue="true"/>
+	<Property name="globalSize" nameUI="Global Scale"  type="float" min="0.0" max="100.0" ini="1.0" step ="0.01" glValue="true"/>  
+	<Property name="globalRotate" nameUI="Global Rotation"  type="float" min="-360.0" max="360.0" ini="0.0" step ="0.01" glValue="true"/>   
+	<Property name="evolution" nameUI="Evolution"  type="float" min="1.0" max="360.0" ini="1.0" step ="1.0" glValue="true"/>  
+	
+	<Property name="corpoly" nameUI="Circle/Polygon"  type="int" min="0" max="1" ini="0" step ="1" glValue="true"/> 
+	<Property name="Polycount" nameUI="Polycount"  type="int" min="3" max="30" ini="6" step ="1" glValue="true"/> 
+	<Property name="MIrisAmount" nameUI="MIris Ammount"  type="int" min="0" max="100" ini="10" step ="1" glValue="true"/>
+	<Property name="MIrisDistance" nameUI="MIris Distance"  type="float" min="-5.0" max="5.0" ini="0.3" step ="0.1" glValue="true"/>
+	<Property name="MIrisSize" nameUI="MIris Size"  type="float" min="0.0" max="10.0" ini="2.0" step ="0.1" glValue="true"/>
+	<Property name="randomized" nameUI="Randomize"  type="float" min="0.0" max="10.0" ini="0.33" step ="0.1" glValue="true"/>
+	<Property name="MIrisPosition" nameUI="MIris Position"  type="float" min="-10.0" max="1.0" ini="-1.5" step ="0.1" glValue="true"/>
+	<Property name="MIrisOpacity" nameUI="MIris Opacity"  type="float" min="0.0" max="10.0" ini="2.0" step ="0.1" glValue="true"/>
+	<Property name="brightness" nameUI="Brightness"  type="float" min="0.0" max="10.0" ini="1.4" step ="0.1" glValue="true"/> 	
+									 
+	<Property name="MIrisColor1" nameUI="MIris Color 1"  type="color" ini="[0.7,0.8,1.0,1.0]" glValue="true"/>
+	<Property name="MIrisColor2" nameUI="MIris Color 2"  type="color" ini="[0.7,.8,1.,1.0]" glValue="true"/>
+	<Property name="MIrisColor3" nameUI="MIris Color 3"  type="color" ini="[0.7,0.8,1.0,1.0]" glValue="true"/>	 					  				
+    </Properties>
+    <glValues>
+	<glValue name="resolution"  type="vec2" value="[_eRect[2], _eRect[3]]"/>
+    </glValues>   
+</ShaderEffect>

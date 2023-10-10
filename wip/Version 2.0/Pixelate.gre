@@ -1,7 +1,0 @@
-
-<ShaderEffect name="Pixelate" menuPath="Filters">
-    <Properties>
-        <Property name="size" type="float" min="0" max="100" ini="2.0" step="0.1" glValue="true"/>
-        </Properties>
-    <Margin value="size"/>
-</ShaderEffect>

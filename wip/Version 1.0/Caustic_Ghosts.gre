@@ -1,0 +1,20 @@
+<!-- Adapted from natron plugins Author : CGVIRUS
+ Adapted for enve/friction by axiomgraph-->
+<ShaderEffect name="Caustic Ghosts" menuPath="Light And Shadow">
+    <Properties>
+	<Property name="Position" nameUI="Position" xnameUI="Position X" ynameUI="Position Y" type="vec2" min="-9999.0" max="9999.0" ini="5.0" step ="10.0" glValue="true"/>
+	<Property name="globalSize" nameUI="Global Scale"  type="float" min="0.0" max="100.0" ini="1.0" step ="0.01" glValue="true"/>  
+	<Property name="globalRotate" nameUI="Global Rotation"  type="float" min="0.0" max="360.0" ini="0.0" step ="0.01" glValue="true"/>   
+	<Property name="evolution" nameUI="Evolution"  type="float" min="1.0" max="360.0" ini="1.0" step ="0.01" glValue="true"/>  
+	
+	<Property name="size" nameUI="Size"  type="float" min="0.0" max="10.0" ini="0.5" step ="0.01" glValue="true"/>	            
+	<Property name="brightness" nameUI="Brightness"  type="float" min="0.0" max="10.0" ini="1.0" step ="0.01" glValue="true"/>	                  
+	<Property name="FlareCount" nameUI="Flare Count"  type="int" min="0" max="50" ini="5" step ="1" glValue="true"/>
+	<Property name="randomized" nameUI="Randomize"  type="float" min="0.0" max="10.0" ini="0.91" step ="0.01" glValue="true"/>	 
+	<Property name="BarelDistort" nameUI="Barel Distort"  type="float" min="0.0" max="10.0" ini="1.8" step ="0.01" glValue="true"/> 
+	<Property name="color" nameUI="Color"  type="color" ini="[1.0,1.0,1.0,1.0]" glValue="true"/>                		                        
+      </Properties>
+    <glValues>
+	<glValue name="resolution"  type="vec2" value="[_eRect[2], _eRect[3]]"/>
+    </glValues>   
+</ShaderEffect>

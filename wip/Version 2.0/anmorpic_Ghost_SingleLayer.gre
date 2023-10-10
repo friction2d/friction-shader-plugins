@@ -1,0 +1,25 @@
+<!-- Adapted from natron plugins Author : CGVIRUS
+ Adapted for enve/friction by axiomgraph-->
+<ShaderEffect name="Anamorphic Ghost SingleLayer" menuPath="Light And Shadow">
+    <Properties>
+	<Property name="Position" nameUI="Position" xnameUI="Position X" ynameUI="Position Y" type="vec2" min="-9999.0" max="9999.0" ini="0.0" step ="10.0" glValue="true"/>
+	<Property name="globalSize" nameUI="Global Scale"  type="float" min="0.0" max="100.0" ini="1.0" step ="0.01" glValue="true"/>
+	<Property name="objectCount" nameUI="Object Count"  type="int" min="0" max="30" ini="5" step ="1" glValue="true"/>
+	<Property name="intesmult" nameUI="Intensity Multiplyer"  type="int" min="0" max="30" ini="5" step ="1" glValue="true"/>	
+	
+	<Property name="objectdist" nameUI="Object Distance"  type="float" min="-2.0" max="2.0" ini="0.16" step ="0.01" glValue="true"/>	
+	<Property name="tapperness" nameUI="Tapperness"  type="float" min="0.0" max="1.0" ini="1.0" step ="0.01" glValue="true"/>	
+	<Property name="cpos" nameUI="C Position"  type="vec2" min="-2.0" max="2.0" ini="0.01" step ="0.01" glValue="true"/>		
+	<Property name="size" nameUI="Size"  type="vec2" min="0.0" max="10.0" ini="[0.20,0.02]" step ="0.01" glValue="true"/>	
+			
+	<Property name="rotation" nameUI="Rotation"  type="float" min="0.0" max="360.0" ini="0.0" step ="0.1" glValue="true"/>			
+	<Property name="Thresold" nameUI="Round Corner"  type="float" min="0.0" max="10.0" ini="0.03" step ="0.1" glValue="true"/>			
+	<Property name="Hardness" nameUI="Hardness"  type="float" min="0.0" max="50.0" ini="3.6" step ="0.1" glValue="true"/>			
+	<Property name="parallax" nameUI="Parallax"  type="float" min="-1.0" max="1.0" ini="-1.0" step ="0.01" glValue="true"/>				
+												 
+	<Property name="Color" nameUI="Color"  type="color" ini="[1.0,1.0,1.0,1.0]" glValue="true"/>
+    </Properties>
+    <glValues>
+	<glValue name="resolution"  type="vec2" value="[_eRect[2], _eRect[3]]"/>
+    </glValues>   
+</ShaderEffect>

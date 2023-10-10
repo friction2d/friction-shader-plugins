@@ -1,0 +1,7 @@
+<!-- Adapted from https://godotshaders.com/shader/loading-effect-color-over-grayscale/ Author : mreliptik
+ Adapted for enve/friction by axiomgraph-->
+<ShaderEffect name="Loading" menuPath="Transitions">
+    <Properties>
+	<Property name="progress" nameUI="Progress" type="float" min="0.0" max="1.0" ini="0.5" step ="0.01" glValue="true"/> 				  				 				  			
+      </Properties>
+</ShaderEffect>

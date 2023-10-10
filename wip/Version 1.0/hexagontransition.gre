@@ -1,0 +1,30 @@
+<!-- //////////////////////////////////////////////////////////////////////////////////////////
+//          )                                                   (                       //
+//       ( /(   (  (               )    (       (  (  (         )\ )    (  (            //
+//       )\()) ))\ )(   (         (     )\ )    )\))( )\  (    (()/( (  )\))(  (        //
+//      ((_)\ /((_|()\  )\ )      )\  '(()/(   ((_)()((_) )\ )  ((_)))\((_)()\ )\       //
+//      | |(_|_))( ((_)_(_/(    _((_))  )(_))  _(()((_|_)_(_/(  _| |((_)(()((_|(_)      //
+//      | '_ \ || | '_| ' \))  | '  \()| || |  \ V  V / | ' \)) _` / _ \ V  V (_-<      //
+//      |_.__/\_,_|_| |_||_|   |_|_|_|  \_, |   \_/\_/|_|_||_|\__,_\___/\_/\_//__/      //
+//                                 |__/                                                 //
+//////////////////////////////////////////////////////////////////////////////////////////
+
+// SPDX-FileCopyrightText: Simon Schneegans <code@simonschneegans.de>
+// SPDX-License-Identifier: GPL-3.0-or-later
+ Adapted from burnmywindows
+ Adapted for enve/friction by axiomgraph-->
+<ShaderEffect name="Hexagon" menuPath="Transitions">
+    <Properties>
+	<Property name="uProgress" nameUI="Progress" type="float" min="0.0" max="1.5" ini="0.5" step ="0.1" glValue="true"/>
+	<Property name="uAdditiveBlending" nameUI="Additive Blending" type="int" min="0" max="1" ini="0" step ="1" glValue="true"/>
+	<Property name="uSeed" nameUI="Seed" type="vec2" min="0.0" max="5000.0" ini="100.0" step ="1.0" glValue="true"/>
+	<Property name="uScale" nameUI="Scale" type="float" min="0.0" max="100.0" ini="2.0" step ="0.5" glValue="true"/>
+	<Property name="uLineWidth" nameUI="Line Width" type="float" min="0.0" max="100.0" ini="2.0" step ="0.1" glValue="true"/>
+	<Property name="uGlowColor" nameUI="Glow" type="color" ini="[1.0,1.0,1.0,1.0]" glValue="true"/>
+	<Property name="uLineColor" nameUI="Line Color" type="color" ini="[0.0,1.0,1.0,1.0]" glValue="true"/>
+	<Property name="uForOpening" nameUI="Reverse" type="int" min="0" max="1" ini="0" step ="1" glValue="true"/>								
+    </Properties>
+    <glValues>
+	<glValue name="resolution"  type="vec2" value="[_eRect[2], _eRect[3]]"/>
+    </glValues>   
+</ShaderEffect>

@@ -1,0 +1,13 @@
+<!-- Adapted from https://github.com/gl-transitions/gl-transitions/blob/master/transitions/polar_function.glsl
+License: MIT
+ Rebuilt for enve/friction by axiomgraph-->
+<ShaderEffect name="Polar Function" menuPath="Transitions">
+    <Properties>
+            <Property name="progress" nameUI="Progress" type="float" min="0.0" max="10.0" ini="0.1" step ="0.01" glValue="true"/> 
+            <Property name="segments" nameUI="Segments" type="int" min="0" max="100" ini="5" step ="1" glValue="true"/>
+            <Property name="rotation" nameUI="Rotation" type="float" min="0.0" max="100.0" ini="0.5" step ="0.01" glValue="true"/>
+    </Properties>
+      <glValues>
+      <glValue name="resolution"  type="vec2" value="[_eRect[2], _eRect[3]]"/>
+    </glValues>   
+</ShaderEffect>

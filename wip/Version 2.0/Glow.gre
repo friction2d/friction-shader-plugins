@@ -1,0 +1,17 @@
+<!-- Adapted from natron plugins Author : CGVIRUS
+ Adapted for enve/friction by axiomgraph-->
+<ShaderEffect name="Glow" menuPath="Light And Shadow">
+    <Properties>
+	<Property name="Position" nameUI="Position" xnameUI="Position X" ynameUI="Position Y" type="vec2" min="-9999.0" max="9999.0" ini="0.0" step ="10.0" glValue="true"/>
+	<Property name="globalSize" nameUI="Global Scale"  type="float" min="0.0" max="100.0" ini="1.0" step ="0.01" glValue="true"/>  
+	<Property name="globalRotate" nameUI="Global Rotation"  type="float" min="0.0" max="360.0" ini="0.0" step ="0.01" glValue="true"/>   
+	<Property name="evolution" nameUI="Evolution"  type="float" min="1.0" max="360.0" ini="1.0" step ="0.01" glValue="true"/>  
+	
+	<Property name="coresize" nameUI="Core Size"  type="float" min="0.0" max="10.0" ini="0.1" step ="0.01" glValue="true"/>  
+	<Property name="decay" nameUI="Decay"  type="float" min="0.1" max="10.0" ini="0.1" step ="0.01" glValue="true"/>  
+	<Property name="FColor" nameUI="Color"  type="color" ini="[1.0,1.0,1.0,1.0]" glValue="true"/>  		
+    </Properties>
+    <glValues>
+	<glValue name="resolution"  type="vec2" value="[_eRect[2], _eRect[3]]"/>
+    </glValues>   
+</ShaderEffect>

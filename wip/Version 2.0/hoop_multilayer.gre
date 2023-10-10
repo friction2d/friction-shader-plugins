@@ -1,0 +1,22 @@
+<!-- Adapted from natron plugins Author : CGVIRUS
+ Adapted for enve/friction by axiomgraph-->
+<ShaderEffect name="Hoop Multilayer" menuPath="Light And Shadow">
+    <Properties>
+	<Property name="Position" nameUI="Position" xnameUI="Position X" ynameUI="Position Y" type="vec2" min="-9999.0" max="9999.0" ini="0.0" step ="10.0" glValue="true"/>
+	<Property name="globalSize" nameUI="Global Scale"  type="float" min="0.0" max="100.0" ini="1.0" step ="0.01" glValue="true"/>  
+	<Property name="globalRotate" nameUI="Global Rotation"  type="float" min="0.0" max="360.0" ini="0.0" step ="0.01" glValue="true"/>   
+	<Property name="evolution" nameUI="Evolution"  type="float" min="1.0" max="360.0" ini="1.0" step ="0.01" glValue="true"/>  
+	
+	<Property name="Radius" nameUI="Radius"  type="float" min="0.0" max="2.0" ini="1.5" step ="0.001" glValue="true"/>  	
+	<Property name="Thickness" nameUI="Thickness"  type="float" min="0.0" max="2.0" ini="0.5" step ="0.001" glValue="true"/>  	
+	<Property name="softness" nameUI="Softness"  type="float" min="0.0" max="1.0" ini="1.0" step ="0.001" glValue="true"/>  		
+	<Property name="raycount" nameUI="Ray Count"  type="int" min="0" max="200" ini="100" step ="1" glValue="true"/>
+	<Property name="raydepth" nameUI="Ray Depth"  type="float" min="-1.5" max="1.5" ini="0.5" step ="0.001" glValue="true"/> 
+	<Property name="Color1" nameUI="Color 1"  type="color" ini="[1.0,0.0,0.0,1.0]" glValue="true"/>
+	<Property name="Color2" nameUI="Color 2"  type="color" ini="[0.0,1.0,0.0,1.0]" glValue="true"/>
+	<Property name="Color3" nameUI="Color 3"  type="color" ini="[0.0,0.0,1.0,1.0]" glValue="true"/>   		   		   		   	
+    </Properties>
+    <glValues>
+	<glValue name="resolution"  type="vec2" value="[_eRect[2], _eRect[3]]"/>
+    </glValues>   
+</ShaderEffect>

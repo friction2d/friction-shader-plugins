@@ -1,13 +1,16 @@
-/*Adapted from natron plugins Author : CGVIRUS
-Adapted for enve/friction by axiomgraph
-Opengl version 3.3*/
+/* Adapted from natron plugins Author : CGVIRUS
+ Adapted for enve/friction by axiomgraph
+ Opengl version 3.3*/
 #version 330 core
 layout(location = 0) out vec4 fragColor;
+layout(pixel_center_integer) in vec4 gl_FragCoord;
+
 uniform sampler2D texture;
 uniform vec2 resolution;
 in vec2 texCoord;
 
 uniform vec2 Position;
+
 //Global parametres
 uniform float globalSize;  
 uniform float globalRotate;  
@@ -15,13 +18,12 @@ uniform float evolution;
 
 //parametres
 uniform float Radius;  
-uniform float Thickness;  
+uniform float Thickness; 
 uniform float softness;  
 uniform int raycount;  
 uniform float raydepth;  
-
 uniform vec4 Color1;  
-uniform vec4 Color2;  
+uniform vec4 Color2; 
 uniform vec4 Color3;  
 
 
@@ -61,14 +63,11 @@ vec3 ring(vec2 uv, vec2 pos, float radius, float thick)
 
 void main(void)
 {
-	vec2 uv = texCoord*2.0-1.0;
+	vec2 uv = texCoord*2.0-1.0;	 
 	uv.x *= resolution.x / resolution.y;	
-	vec2 mouse = Position.xy/ resolution.xy;
-	mouse.x *=  resolution.x /  resolution.y;   
+	vec2 mouse = Position.xy/resolution.xy;	 
+	mouse.x *= resolution.x / resolution.y;   
 	vec4 linker = texture2D(texture,texCoord);	
 	vec3 c = ring(uv, mouse, Radius*globalSize, Thickness);	
-	fragColor = vec4(c, texture2D(texture,texCoord).a)+linker;
+	fragColor = vec4(c, 1.0)+linker;
 }
-
-
- 
