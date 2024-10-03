@@ -2,7 +2,7 @@
 ( Adapted to Natron by F.Fernandez
  Original code :crok_fractal_soup Matchbox for Autodesk Flame")
  Rebuilt for enve by axiomgraph-->
-<ShaderEffect name="Fractal" menuPath="Generate">
+<ShaderEffect name="Fractal Soup" menuPath="Generate">
     <Properties>
       <Property name="iTime" nameUI="Time" type="float" min="0.0" max="10000.0" ini="1.0" step ="1.0" glValue="true"/>
       <Property name="detail" nameUI="Detail" type="int" min="0" max="100" ini="48" step ="1" glValue="true"/>
