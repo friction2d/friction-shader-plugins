@@ -1,12 +1,12 @@
 <!-- Adapted from olive video editor project
- Rebuilt for enve by axiomgraph 
+ Rebuilt for enve by axiomgraph
 -->
 <ShaderEffect name="Emboss" menuPath="Stylize">
     <Properties>
      <Property name="contrast100" nameUI="Contrast" type="float" min="5.0" max="200.0" ini="50.0" step ="1.0" glValue="true"/>
      <Property name="level"  nameUI="Resolution" type="float" min="0.0" max="100.0" ini="1.0" step ="1.0" glValue="true"/>
-     <Property name="hslmode" nameUI="HSL mode"  type="int" min="0" max="1" ini="0" step ="1" glValue="true"/>  
-     <Property name="invert" nameUI="Invert" type="int" min="0" max="1" ini="0" step ="1" glValue="true"/>
+     <Property name="hslmode" nameUI="HSL mode"  type="bool" ini="0" step ="1" glValue="true"/>
+     <Property name="invert" nameUI="Invert" type="bool" ini="0" step ="1" glValue="true"/>
     </Properties>
    <glValues>
         <glValue name="resolution"  type="vec2" value="[_eRect[2], _eRect[3]]"/>

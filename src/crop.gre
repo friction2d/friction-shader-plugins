@@ -3,7 +3,7 @@
 <ShaderEffect name="Crop" menuPath="Distort">
     <Properties>
       <Property name="left" nameUI="Left"
-         type="float" min="0.0" max="100.0" ini="0.0" step="1.0" glValue="true"/>  
+         type="float" min="0.0" max="100.0" ini="0.0" step="1.0" glValue="true"/>
          <Property name="top" nameUI="Top"
          type="float" min="0.0" max="100.0" ini="0.0" step="1.0" glValue="true"/>
          <Property name="right" nameUI="Right"
@@ -13,8 +13,8 @@
          <Property name="feather" nameUI="Feather"
          type="float" min="0.0" max="100.0" ini="0.0" step="1.0" glValue="true"/>
          <Property name="invert" nameUI="Invert"
-         type="int" min="0" max="1" ini="0" step="1" glValue="true"/>   
-         
-        </Properties> 
-      
+         type="bool" ini="0" step="1" glValue="true"/>
+
+        </Properties>
+
   </ShaderEffect>

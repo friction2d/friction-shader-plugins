@@ -1,15 +1,15 @@
 <!-- Adapted from olive video editor project
- Rebuilt for enve by axiomgraph 
+ Rebuilt for enve by axiomgraph
 -->
 <ShaderEffect name="Vignette" menuPath="Stylize">
 	<Properties>
 	<Property name="lensRadius" nameUI="Circle" xnameUI="Size"  ynameUI="Softness" type="vec2" min="0.0" max="1000.0" ini="[45.0,38.0]" 	step ="1.0" glValue="true"/>
-	 <Property name="circular" nameUI="Circular" type="int" min="0" max="1" ini="0" step ="1" glValue="true"/>
+	 <Property name="circular" nameUI="Circular" type="bool" ini="0" step ="1" glValue="true"/>
 	 <Property name="center" nameUI="Center" type="vec2" min="-1000.0" max="1000.0" ini="0" step ="1.0" glValue="true"/>
 
-  	<Property name="invert" nameUI="Invert" type="int" min="0" max="1" ini="0" step ="1" glValue="true"/>
+  	<Property name="invert" nameUI="Invert" type="bool" ini="0" step ="1" glValue="true"/>
 	</Properties>
 		<glValues>
-       		<glValue name="resolution"  type="vec2" value="[_eRect[2], _eRect[3]]"/>  
+       		<glValue name="resolution"  type="vec2" value="[_eRect[2], _eRect[3]]"/>
        		</glValues>
 </ShaderEffect>
