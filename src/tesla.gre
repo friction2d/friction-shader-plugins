@@ -1,9 +1,9 @@
-<!-- Adapted from natron plugins 
+<!-- Adapted from natron plugins
  Rebuilt for enve by axiomgraph-->
 <ShaderEffect name="Tesla" menuPath="Generate">
     <Properties>
       <Property name="iTime" nameUI="Time" type="float" min="0.0" max="10000.0" ini="1.0" step ="1.0" glValue="true"/>
-      
+
       <Property name="noOfBolts" nameUI="Bolts" type="int" min="0" max="100" ini="5" step ="1" glValue="true"/>
 
       <Property name="iteration" nameUI="Detail" type="int" min="1" max="10" ini="7" step ="1" glValue="true"/>
@@ -15,13 +15,13 @@
       <Property name="speed"  nameUI="Speed" type="float" min="-20000.0" max="20000.0" ini="0.2" step ="1.0" glValue="true"/>
       <Property name="Offset" type="float" min="-10000.0" max="10000.0" ini="0.0" step ="1.0" glValue="true"/>
 
-      <Property name="locked" nameUI="Enable Lock" type="int" min="0" max="1" ini="0" step ="1" glValue="true"/>
+      <Property name="locked" nameUI="Enable Lock" type="bool" ini="0" step ="1" glValue="true"/>
       <Property name="y_scale" nameUI="Scale" type="float" min="-20000.0" max="20000.0" ini="0.2" step ="1.0" glValue="true"/>
-      
+
       <Property name="posA" nameUI="Left position" type="vec2" min="-1000.0" max="1000.0" ini="[0.0,0.5]" step ="0.1" glValue="true"/>
       <Property name="posB" nameUI="Middle position" type="vec2" min="-1000.0" max="1000.0" ini="[0.5,0.5]" step ="0.1" glValue="true"/>
       <Property name="posC" nameUI="Right position" type="vec2" min="-1000.0" max="1000.0" ini="[1.0,0.5]" step ="0.1" glValue="true"/>
- 
+
       <Property name="gamma" nameUI="Gamma" type="float" min="0.0" max="10.0" ini="1.0" step ="0.1" glValue="true"/>
       <Property name="contrast" nameUI="Contrast" type="float" min="0.0" max="10000.0" ini="1.0" step ="1.0" glValue="true"/>
       <Property name="brightness" nameUI="Brightness" type="float" min="0.0" max="10.0" ini="1.0" step ="1.0" glValue="true"/>
@@ -36,5 +36,5 @@
       </Properties>
     <glValues>
       <glValue name="resolution"  type="vec2" value="[_eRect[2], _eRect[3]]"/>
-    </glValues>   
+    </glValues>
 </ShaderEffect>

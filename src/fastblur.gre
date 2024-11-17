@@ -3,9 +3,9 @@
 <ShaderEffect name="Fast Blur" menuPath="Blur">
     <Properties>
       <Property name="size" nameUI="Size" type="float" min="0.0" max="100.0" ini="10.0" step ="0.5" glValue="true"/>
-      <Property name="perpixel_size" nameUI="Modulate" type="int" min="0" max="1" ini="0" step ="1" glValue="true"/>   
+      <Property name="perpixel_size" nameUI="Modulate" type="bool" ini="0" step ="1" glValue="true"/>
       </Properties>
     <glValues>
       <glValue name="resolution"  type="vec2" value="[_eRect[2], _eRect[3]]"/>
-    </glValues>   
+    </glValues>
 </ShaderEffect>
