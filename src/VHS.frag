@@ -9,15 +9,15 @@ Rebuilt for enve/friction by axiomgraph
 layout(location = 0) out vec4 fragColor;
 layout(pixel_center_integer) in vec4 gl_FragCoord;
 
-uniform sampler2D texture;
+uniform sampler2D tex;
 
 uniform vec2 resolution;
 in vec2 texCoord;
 
 uniform float time;
 
-vec3 tex2D( sampler2D texture, vec2 _p ){
-  vec3 col = texture2D( texture, _p ).xyz;
+vec3 tex2D( sampler2D tex, vec2 _p ){
+  vec3 col = texture(tex, _p ).xyz;
   if ( 0.5 < abs( _p.x - 0.5 ) ) {
     col = vec3( 0.1 );
   }
@@ -65,7 +65,7 @@ void main(void){
   uvn.y += snPhase * 0.3;
   uvn.x += snPhase * ( ( noise( vec2( uv.y * 100.0, time * 10.0 ) ) - 0.5 ) * 0.2 );
     
-  col = tex2D( texture, uvn );
+  col = tex2D( tex, uvn );
   col *= 1.0 - tcPhase;
   col = mix(
     col,
@@ -76,9 +76,9 @@ void main(void){
   // bloom
   for( float x = -4.0; x < 2.5; x += 1.0 ){
     col.xyz += vec3(
-      tex2D( texture, uvn + vec2( x - 0.0, 0.0 ) * 7E-3 ).x,
-      tex2D( texture, uvn + vec2( x - 2.0, 0.0 ) * 7E-3 ).y,
-      tex2D( texture, uvn + vec2( x - 4.0, 0.0 ) * 7E-3 ).z
+      tex2D( tex, uvn + vec2( x - 0.0, 0.0 ) * 7E-3 ).x,
+      tex2D( tex, uvn + vec2( x - 2.0, 0.0 ) * 7E-3 ).y,
+      tex2D( tex, uvn + vec2( x - 4.0, 0.0 ) * 7E-3 ).z
     ) * 0.1;
   }
   col *= 0.6;

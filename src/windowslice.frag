@@ -7,7 +7,7 @@ precision mediump float;
 
 layout(location = 0) out vec4 fragColor;
 layout(pixel_center_integer) in vec4 gl_FragCoord;
-uniform sampler2D texture;
+uniform sampler2D tex;
  in vec2 texCoord;
 
 uniform float progress; 
@@ -18,7 +18,7 @@ uniform float smoothness;
 vec4 transition (vec2 p) {
   float pr = smoothstep(-smoothness, 0.0, p.x - progress * (1.0 + smoothness));
   float s = step(pr, fract(count * p.x));
-  return mix(texture2D(texture,p), vec4(0.0), s); // for future use
+  return mix(texture(tex,p), vec4(0.0), s); // for future use
 }
 
 void main(void)

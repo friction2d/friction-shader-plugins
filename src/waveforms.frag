@@ -5,7 +5,7 @@
 layout(location = 0) out vec4 fragColor;
 layout(origin_upper_left) in vec4 gl_FragCoord;
 
-uniform sampler2D texture;
+uniform sampler2D tex;
 in vec2 texCoord;
 
 uniform   float time; 
@@ -107,5 +107,5 @@ void main(void)
 	
 	c = vec4(line) * color;
 	
-	fragColor = vec4(c.rgb,line*texture2D(texture,texCoord).a);
+	fragColor = vec4(c.rgb,line*texture(tex,texCoord).a);
 }

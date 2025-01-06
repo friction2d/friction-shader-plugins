@@ -15,7 +15,7 @@ Opengl version 3.3*/
 layout(location = 0) out vec4 fragColor;
 layout(pixel_center_integer) in vec4 gl_FragCoord;
 
-uniform sampler2D texture;
+uniform sampler2D tex;
 
 uniform vec2 resolution;
 in vec2 texCoord;
@@ -41,7 +41,7 @@ float character(int n, vec2 p)
 void main(void)
 {
 	vec2 pix = gl_FragCoord.xy;
-	vec3 col = texture2D(texture, floor(pix/8.0)*8.0/resolution.xy).rgb;	
+	vec3 col = texture(tex, floor(pix/8.0)*8.0/resolution.xy).rgb;	
 	
 	float gray = 0.3 * col.r + 0.59 * col.g + 0.11 * col.b;
 	
@@ -59,6 +59,6 @@ void main(void)
 	if (bool(grey))	col = gray*vec3(character(n, p));
 	else col = col*character(n, p);
 	
-	fragColor = vec4(col, texture2D(texture,texCoord).a);
+	fragColor = vec4(col, texture(tex,texCoord).a);
 }
 

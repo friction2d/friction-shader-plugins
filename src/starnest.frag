@@ -10,7 +10,7 @@ precision mediump float;
 
 layout(location = 0) out vec4 fragColor;
 layout(pixel_center_integer) in vec4 gl_FragCoord;
-uniform sampler2D texture;
+uniform sampler2D tex;
 
 uniform vec2 resolution;
 in vec2 texCoord;
@@ -77,6 +77,6 @@ void main( void)
                 s+=stepsize;
         }
         v=mix(vec3(length(v)),v,saturation); //color adjust
-        fragColor = vec4(v*.01,texture2D(texture,texCoord).a);
+        fragColor = vec4(v*.01,texture(tex,texCoord).a);
 
 }

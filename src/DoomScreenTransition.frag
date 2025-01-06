@@ -7,7 +7,7 @@ precision mediump float;
 
 layout(location = 0) out vec4 fragColor;
 layout(pixel_center_integer) in vec4 gl_FragCoord;
-uniform sampler2D texture;
+uniform sampler2D tex;
 uniform vec2 resolution;
 in vec2 texCoord;
 
@@ -58,7 +58,7 @@ vec4 transition(vec2 uv) {
   vec4 c;
   if (phase + posY < 1.0) {
     p = vec2(uv.x, uv.y + mix(0.0, vec2(1.0).y, phase)) / vec2(1.0).xy;
-    c = texture2D(texture,p);
+    c = texture(tex,p);
   } else {
     p = uv.xy / vec2(1.0).xy;
     c = vec4(0.0); // for future use

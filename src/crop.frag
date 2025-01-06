@@ -8,7 +8,7 @@ layout(location = 0) out vec4 fragColor;
 
 in vec2 texCoord;
 
-uniform sampler2D texture;
+uniform sampler2D tex;
 
 
 const float PI = 3.1415926535;
@@ -23,7 +23,7 @@ uniform int invert;
 
 
 void main(void) {
-	vec4 textureColor = texture2D(texture,texCoord);
+	vec4 textureColor = texture(tex,texCoord);
 	float alpha = textureColor.a;
 	if (feather == 0.0) {
 		if (texCoord.x < (left*0.01) || texCoord.y < (top*0.01) || texCoord.x > (1.0-(right*0.01)) || texCoord.y > (1.0-(bottom*0.01))) {

@@ -11,7 +11,7 @@ layout(location = 0) out vec4 fragColor;
 layout(pixel_center_integer) in vec4 gl_FragCoord;
 in vec2 texCoord;
 
-uniform sampler2D texture;
+uniform sampler2D tex;
 uniform vec2 scenePos;
 uniform float iTime;
 
@@ -56,6 +56,6 @@ void main(void)
              ,(sin(t * 0.02) + 1.0) * 0.45
              ) * Brightness * .1;
     
-    fragColor = vec4(c, texture2D(texture,texCoord).a);
+    fragColor = vec4(c, texture(tex,texCoord).a);
 }
 

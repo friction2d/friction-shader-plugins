@@ -8,7 +8,7 @@ layout(location = 0) out vec4 fragColor;
 in vec2 texCoord;
 
 
-uniform sampler2D texture;
+uniform sampler2D tex;
 
 uniform vec2 redchannel;
 uniform vec2 greenchannel;
@@ -53,10 +53,10 @@ void main( void )
 		blueoff = 0;
 		}
 
-    	 vec4 tex = vec4(texture2D(texture, vec2(uv.x-rdx,uv.y-rdy)).r,
-                    texture2D(texture,vec2(uv.x-gdx,uv.y-gdy)).g,
-                    texture2D(texture, vec2(uv.x-bdx,uv.y-bdy)).b,
-                    texture2D(texture, texCoord.xy).a
+    	 vec4 tex = vec4(texture(tex, vec2(uv.x-rdx,uv.y-rdy)).r,
+                    texture(tex,vec2(uv.x-gdx,uv.y-gdy)).g,
+                    texture(tex, vec2(uv.x-bdx,uv.y-bdy)).b,
+                    texture(tex, texCoord.xy).a
                    );	
 
     	

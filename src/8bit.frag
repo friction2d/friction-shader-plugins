@@ -4,7 +4,7 @@
 // Opengl version 3.3
 #version 330 core
 layout(location = 0) out vec4 fragColor;
-uniform sampler2D texture;
+uniform sampler2D tex;
 layout(pixel_center_integer) in vec4 gl_FragCoord;
 in vec2 texCoord;
 
@@ -148,14 +148,14 @@ vec3 dither (vec3 color, vec2 uv) {
 void main(void)
 {
 	vec2 uv = texCoord;
-	vec4 tc = texture2D(texture, uv);
+	vec4 tc = texture(tex, uv);
 	
-	vec4 result = texture2D(texture, uv);
+	vec4 result = texture(tex, uv);
 
 	
 	if (graphicMode == 0){
     
-    fragColor = texture2D(texture,uv);
+    fragColor = texture(tex,uv);
     }
     else
 	{

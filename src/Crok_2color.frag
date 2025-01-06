@@ -8,7 +8,7 @@ layout(location = 0) out vec4 fragColor;
 
 in vec2 texCoord;
 
-uniform sampler2D texture;
+uniform sampler2D tex;
 uniform vec2 scenePos;
 
 uniform float Amount; // = 1; // Amount : (Amount), min = 0., max = 1.
@@ -34,7 +34,7 @@ void main(void)
 {
 	vec2 uv = texCoord;
 	
-	vec4 original = texture2D(texture, uv);
+	vec4 original = texture(tex, uv);
 	vec4 col = original;
 
 	float bri = (col.x+col.y+col.z)/3.0;

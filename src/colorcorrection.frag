@@ -30,7 +30,7 @@ layout(location = 0) out vec4 fragColor;
 
 in vec2 texCoord;
 
-uniform sampler2D texture;
+uniform sampler2D tex;
 
 uniform float temperature;
 uniform float tint;
@@ -44,7 +44,7 @@ uniform float saturation;
 
 
 void main(void) {
-	vec4 textureColor = texture2D(texture, texCoord);
+	vec4 textureColor = texture(tex, texCoord);
 
 	vec3 rgb = textureColor.rgb;
 

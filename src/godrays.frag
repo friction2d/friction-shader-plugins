@@ -6,7 +6,7 @@
 layout(location = 0) out vec4 fragColor;
 layout(pixel_center_integer) in vec4 gl_FragCoord;
 
-uniform sampler2D texture; 
+uniform sampler2D tex; 
 in vec2 texCoord;
 
 uniform float time;
@@ -98,6 +98,6 @@ void main(void)
 	vec3 shine = vec3(rays) * color.rgb;
  
 	
-	fragColor = vec4(shine, rays * texture2D(texture, texCoord).a);
+	fragColor = vec4(shine, rays * texture(tex, texCoord).a);
 }
 

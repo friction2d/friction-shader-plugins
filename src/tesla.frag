@@ -8,7 +8,7 @@
 layout(location = 0) out vec4 fragColor;
 layout(pixel_center_integer) in vec4 gl_FragCoord;
 
-uniform sampler2D texture;
+uniform sampler2D tex;
 
 uniform vec2 resolution;
 in vec2 texCoord;
@@ -152,7 +152,7 @@ float noise22(vec3 m) {
 
 float bolt(float shift,vec2 fragCoord){
     vec2 uv = gl_FragCoord.xy / resolution.xy;
-	float s = texture2D(texture, uv).r;
+	float s = texture(tex, uv).r;
 	
     vec2 t = uv * vec2(2.0,1.0) - (time + shift * 10.0)*3.0;
     vec3 p3 = vec3(uv, time * 5.0 + shift);    
@@ -192,5 +192,5 @@ void main(void)
 	vec3 con_color = mix(avg_lum, intensity, contrast);
 	vec3 brt_color = con_color - 1.0 + brightness;
 	vec3 fin_color = mix(brt_color, brt_color * tint_col, tint);
-	fragColor = vec4(fin_color * 5., texture2D(texture,texCoord).a);
+	fragColor = vec4(fin_color * 5., texture(tex,texCoord).a);
 }

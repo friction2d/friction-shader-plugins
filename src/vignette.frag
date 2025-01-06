@@ -7,7 +7,7 @@ Rebuilt for enve by axiomgraph
 
 layout(location = 0) out vec4 fragColor;
 
-uniform sampler2D texture;
+uniform sampler2D tex;
 
 in vec2 texCoord;
 layout(pixel_center_integer) in vec4 gl_FragCoord;
@@ -27,7 +27,7 @@ void main(void) {
 	if (lensRadius.x == 0.0) {
 		discard;
 	}
-	vec4 c = texture2D(texture, texCoord);
+	vec4 c = texture(tex, texCoord);
 	vec2 vignetteCoord = texCoord;
 	if (bool(circular)) {
 		float ar = (resolution.x/resolution.y);

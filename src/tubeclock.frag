@@ -7,7 +7,7 @@ Rebuilt for enve by axiomgraph
 layout(location = 0) out vec4 fragColor;
 layout(origin_upper_left) in vec4 gl_FragCoord;
 
-uniform sampler2D texture;
+uniform sampler2D tex;
 
 uniform vec2 resolution;
 in vec2 texCoord;
@@ -299,7 +299,7 @@ if (GLOWPULSE){
     color *= 0.25+vec3(smoothstep(0.0,64.0 / resolution.y,grid))*0.75;
   }
 	
-	fragColor = vec4( color ,   color* texture2D(texture,texCoord).a );
+	fragColor = vec4( color ,   color* texture(tex,texCoord).a );
 }
 
 

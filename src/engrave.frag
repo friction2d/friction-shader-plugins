@@ -35,7 +35,7 @@ layout(pixel_center_integer) in vec4 gl_FragCoord;
 in vec2 texCoord;
 uniform vec2 scenePos;
 
-uniform sampler2D texture;
+uniform sampler2D tex;
 
 uniform float amplitude;
 uniform float frequency;
@@ -65,7 +65,7 @@ void main(void)
     datosPatron[4] = vec3(1.0, 0.0, 0.3); // 90
     datosPatron[5] = vec3(0.0, 1.0, 0.2); // 0
 
-    vec4 color = texture2D(texture, vec2(gl_FragCoord.x / scenePos.x, xy.y));
+    vec4 color = texture(tex, vec2(gl_FragCoord.x / scenePos.x, xy.y));
 
     
     for(int i = 0; i < kNumPatrones; i++)
@@ -93,6 +93,6 @@ void main(void)
         }
     }
   vec4 color1 = vec4(grey, grey, grey, 1.0);  
-  vec4  color2 = texture2D(texture,uv); 
+  vec4  color2 = texture(tex,uv); 
   fragColor =  mix(color2,color1,Opacity); 
 }

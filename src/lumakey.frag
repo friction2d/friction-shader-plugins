@@ -9,7 +9,7 @@ Rebuilt for enve by axiomgraph
 
 layout(location = 0) out vec4 fragColor;
 
-uniform sampler2D texture;
+uniform sampler2D tex;
 
 in vec2 texCoord;
 layout(origin_upper_left) in vec4 gl_FragCoord;
@@ -22,7 +22,7 @@ uniform float hic;
 uniform int invert;
 
 void main(void) {
-	vec4 texture_color = texture2D(texture,texCoord);
+	vec4 texture_color = texture(tex,texCoord);
 
 	float luma = max(max(texture_color.r,texture_color.g), texture_color.b) + min(min(texture_color.r,texture_color.g), texture_color.b);
 	

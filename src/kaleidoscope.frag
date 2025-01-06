@@ -6,7 +6,7 @@
 layout(location = 0) out vec4 fragColor;
 layout(pixel_center_integer) in vec4 gl_FragCoord;
 
-uniform sampler2D texture;
+uniform sampler2D tex;
 
 uniform vec2 resolution;
 in vec2 texCoord;
@@ -39,12 +39,12 @@ void main(void)
                 a += i;
                 a /= i;
                 if (bool(addup)) {
-			color += texture2D(texture, mirror(uv*vec2(1.,resolution.x/resolution.y)*2.0)) * 10.0/i;
+			color += texture(tex, mirror(uv*vec2(1.,resolution.x/resolution.y)*2.0)) * 10.0/i;
 		}
         }
 	if (bool(addup)) {
         fragColor = color / 28.289;
 	} else {
-        fragColor = texture2D(texture, mirror(uv*vec2(1.,resolution.x/resolution.y)*2.0));
+        fragColor = texture(tex, mirror(uv*vec2(1.,resolution.x/resolution.y)*2.0));
 	}
 }

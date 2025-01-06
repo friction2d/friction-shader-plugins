@@ -5,7 +5,7 @@ Opengl version 3.3*/
 #version 330 core
 layout(location = 0) out vec4 fragColor;
 layout(pixel_center_integer) in vec4 gl_FragCoord;
-uniform sampler2D texture;
+uniform sampler2D tex;
 in vec2 texCoord;
 
 uniform vec2 resolution; 
@@ -22,7 +22,7 @@ vec4 transition(vec2 p, vec2 uv) {
    p.x/=ar;
   return mix(
    vec4(0.0),
-    texture2D(texture,uv),
+    texture(tex,uv),
     smoothstep(0., feather, atan(rp.y ,rp.x) - (progress-.5) * PI * 2.5)
   );
 }

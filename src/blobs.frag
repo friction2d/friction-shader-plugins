@@ -6,7 +6,7 @@
 
 #version 330 core
 layout(location = 0) out vec4 fragColor;
-uniform sampler2D texture;
+uniform sampler2D tex;
 uniform vec2 scenePos;
 in vec2 texCoord;
 layout(pixel_center_integer) in vec4 gl_FragCoord;
@@ -169,6 +169,6 @@ void main(void)
 	
   	color = mix(vec3(Blobs.rgb),vec3(Depth.rgb),1.-dist);
 		
-  	fragColor = vec4(  color.xyz , texture2D(texture,texCoord).a );
+  	fragColor = vec4(  color.xyz , texture(tex,texCoord).a );
 
   }

@@ -27,7 +27,7 @@
 layout(location = 0) out vec4 fragColor;
 layout(pixel_center_integer) in vec4 gl_FragCoord;
 
-uniform sampler2D texture;
+uniform sampler2D tex;
 uniform vec2 resolution;
 
 
@@ -39,7 +39,7 @@ uniform float iTime;
 
 float hash21(in vec2 n){ return fract(sin(dot(n, vec2(12.9898, 4.1414))) * 43758.5453); }
 mat2 makem2(in float theta){float c = cos(theta);float s = sin(theta);return mat2(c,-s,s,c);}
-float noise( in vec2 x ){return texture2D(texture, x*.01).x;}
+float noise( in vec2 x ){return texture(tex, x*.01).x;}
 
 vec2 gradn(vec2 p)
 {
@@ -96,5 +96,5 @@ void main(void)
 	
 	vec3 col = vec3(.2,0.07,0.01)/rz;
 	col=pow(col,vec3(1.4));
-	fragColor = vec4(col,texture2D(texture,texCoord).a);
+	fragColor = vec4(col,texture(tex,texCoord).a);
 }

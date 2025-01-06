@@ -7,7 +7,7 @@ precision mediump float;
 
 layout(location = 0) out vec4 fragColor;
 layout(pixel_center_integer) in vec4 gl_FragCoord;
-uniform sampler2D texture;
+uniform sampler2D tex;
 uniform vec2 resolution;
 in vec2 texCoord;
 
@@ -27,5 +27,5 @@ void main(void)
    float r = rand(floor(vec2(size) * uv));
    float j;
    float m = smoothstep(0.0, -smoothness, r - (time* (1.0 + smoothness)));
-   fragColor=  mix(texture2D(texture,uv),vec4(0.0,0.0,0.0,0.0), m);
+   fragColor=  mix(texture(tex,uv),vec4(0.0,0.0,0.0,0.0), m);
 }

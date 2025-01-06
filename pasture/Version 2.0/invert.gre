@@ -1,6 +1,0 @@
-
-<ShaderEffect name="Invert" menuPath="Color">
-    <Properties>
-        <Property name="invert"   type="int" min="0" max="1" step="1" ini="1" glValue="true"/>
-    </Properties>
-</ShaderEffect>

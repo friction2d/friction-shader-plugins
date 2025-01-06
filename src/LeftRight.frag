@@ -5,7 +5,7 @@ Opengl version 3.3*/
 #version 330 core
 layout(location = 0) out vec4 fragColor;
 layout(pixel_center_integer) in vec4 gl_FragCoord;
-uniform sampler2D texture;
+uniform sampler2D tex;
 in vec2 texCoord;
  
 uniform float progress;  
@@ -27,7 +27,7 @@ vec4 transition (vec2 uv) {
     if(inBounds(spfr)){
         return vec4(0.0);
     }else if(inBounds(spto)){
-        return texture2D(texture,spto) * (1.0 - progress);
+        return texture(tex,spto) * (1.0 - progress);
     } else{
         return black;
     }

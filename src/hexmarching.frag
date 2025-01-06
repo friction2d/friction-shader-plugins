@@ -10,7 +10,7 @@
 layout(location = 0) out vec4 fragColor;
 layout(pixel_center_integer) in vec4 gl_FragCoord;
 
-uniform sampler2D texture;
+uniform sampler2D tex;
 uniform vec2 resolution;
 in vec2 texCoord;
 
@@ -272,7 +272,7 @@ void main(void) {
     
   col = clamp(col, 0.0, 1.0);
   col = sqrt(col);
-  fragColor = vec4(col, texture2D(texture,texCoord).a);
+  fragColor = vec4(col, texture(tex,texCoord).a);
 }
 
 

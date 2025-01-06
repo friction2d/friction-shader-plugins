@@ -29,7 +29,7 @@
 layout(location = 0) out vec4 fragColor;
 layout(pixel_center_integer) in vec4 gl_FragCoord;
 in vec2 texCoord;
-uniform sampler2D texture;
+uniform sampler2D tex;
 
 
 uniform vec2 scenePos;
@@ -45,14 +45,14 @@ float intensity(in vec4 color){
 
 vec3 sobel(float stepx, float stepy, vec2 center){
 	// get samples around pixel
-    float tleft = intensity(texture2D(texture,center + vec2(-stepx,stepy)));
-    float left = intensity(texture2D(texture,center + vec2(-stepx,0)));
-    float bleft = intensity(texture2D(texture,center + vec2(-stepx,-stepy)));
-    float top = intensity(texture2D(texture,center + vec2(0,stepy)));
-    float bottom = intensity(texture2D(texture,center + vec2(0,-stepy)));
-    float tright = intensity(texture2D(texture,center + vec2(stepx,stepy)));
-    float right = intensity(texture2D(texture,center + vec2(stepx,0)));
-    float bright = intensity(texture2D(texture,center + vec2(stepx,-stepy)));
+    float tleft = intensity(texture(tex,center + vec2(-stepx,stepy)));
+    float left = intensity(texture(tex,center + vec2(-stepx,0)));
+    float bleft = intensity(texture(tex,center + vec2(-stepx,-stepy)));
+    float top = intensity(texture(tex,center + vec2(0,stepy)));
+    float bottom = intensity(texture(tex,center + vec2(0,-stepy)));
+    float tright = intensity(texture(tex,center + vec2(stepx,stepy)));
+    float right = intensity(texture(tex,center + vec2(stepx,0)));
+    float bright = intensity(texture(tex,center + vec2(stepx,-stepy)));
  
 	// Sobel masks (see http://en.wikipedia.org/wiki/Sobel_operator)
 	//        1 0 -1     -1 -2 -1
@@ -72,8 +72,8 @@ vec3 sobel(float stepx, float stepy, vec2 center){
 
 void main(void){
 	vec2 uv = gl_FragCoord.xy/scenePos.xy;
-	vec4 color = texture2D(texture, uv.xy);
+	vec4 color = texture(tex, uv.xy);
 	vec3 color2 = sobel(size/scenePos[0], size/scenePos[1], uv);
     
-    fragColor =vec4(mix(color.rgb,color2.rgb,opacity),texture2D(texture,uv).a);
+    fragColor =vec4(mix(color.rgb,color2.rgb,opacity),texture(tex,uv).a);
 }

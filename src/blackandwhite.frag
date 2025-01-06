@@ -2,7 +2,7 @@
 // Rebuilt for enve by axiomgraph
 #version 330 core
 layout(location = 0) out vec4 fragColor;
-uniform sampler2D texture;
+uniform sampler2D tex;
 in vec2 texCoord;
 
 
@@ -19,7 +19,7 @@ const vec3 lumcoeff = vec3(0.2126,0.7152,0.0722);
 void main(void) 
 { 		
 	
-	vec4 tc = texture2D(texture, texCoord);
+	vec4 tc = texture(tex, texCoord);
 
 	vec4 tc_new = tc * (exp2(tc)*vec4(Exposure));
 	vec4 RGB_lum = vec4(lumcoeff * RGB_lum, 0.0 );

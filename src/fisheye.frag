@@ -7,7 +7,7 @@ Rebuilt for enve by axiomgraph
 
 layout(location = 0) out vec4 fragColor;
 
-uniform sampler2D texture;
+uniform sampler2D tex;
 
 in vec2 texCoord;
 layout(pixel_center_integer) in vec4 gl_FragCoord;
@@ -31,6 +31,6 @@ void main(void) {
 	} else {
 		uv = texCoord;
 	}
-	vec4 c = texture2D(texture, uv);
+	vec4 c = texture(tex, uv);
 	fragColor = c;
 }

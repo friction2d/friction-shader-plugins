@@ -2,7 +2,7 @@
 // Rebuild for enve by axiomgraph
 #version 330 core
 layout(location = 0) out vec4 fragColor;
-uniform sampler2D texture;
+uniform sampler2D tex;
 in vec2 texCoord;
 
 uniform float time;
@@ -123,8 +123,8 @@ vec4 render( vec2 uv )
     #endif
     
     if(clmpBool == 0)
-    {return texture2D( texture, uv );}
-    else {return texture2D( texture, clamp(uv,0.0,1.0) );}
+    {return texture(tex, uv );}
+    else {return texture(tex, clamp(uv,0.0,1.0) );}
 }
 
 void main()

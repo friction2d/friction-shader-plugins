@@ -6,7 +6,7 @@ Rebuilt for enve by axiomgraph
 layout(location = 0) out vec4 fragColor;
 layout(origin_upper_left) in vec4 gl_FragCoord;
 
-uniform sampler2D texture;
+uniform sampler2D tex;
 
 uniform vec2 resolution;
 in vec2 texCoord;
@@ -32,12 +32,12 @@ void main( void )
     float minb = s-thres;
     
     for (int i = 0; i <= hres; i++) {
-        vec3 x = texture2D(texture, vec2(float(i)/float(hres), uv.x)).rgb;
+        vec3 x = texture(tex, vec2(float(i)/float(hres), uv.x)).rgb;
 		col += vec3(intensity)*step(x, vec3(maxb))*step(vec3(minb), x);
 
 		float l = dot(x, x);
 		col += vec3(intensity)*step(l, maxb*maxb)*step(minb*minb, l);
     }
 
-	fragColor = vec4(col,texture2D(texture,texCoord));
+	fragColor = vec4(col,texture(tex,texCoord));
 }

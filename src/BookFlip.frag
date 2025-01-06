@@ -6,7 +6,7 @@ Opengl version 3.3*/
 
 layout(location = 0) out vec4 fragColor;
 layout(pixel_center_integer) in vec4 gl_FragCoord;
-uniform sampler2D texture;
+uniform sampler2D tex;
  in vec2 texCoord;
 
 uniform float progress; 
@@ -32,9 +32,9 @@ vec4 transition (vec2 p) {
   float pr = step(1.0 - progress, p.x);
 
   if (p.x < 0.5) {
-    return mix(texture2D(texture,p), vec4(1.0)* addShade(), pr);
+    return mix(texture(tex,p), vec4(1.0)* addShade(), pr);
   } else {
-    return mix(texture2D(texture,skewRight(p)) * addShade(), vec4(0.0),   pr);
+    return mix(texture(tex,skewRight(p)) * addShade(), vec4(0.0),   pr);
   }
 }
 

@@ -4,7 +4,7 @@
 // Opengl version 3.3
 #version 330 core
 layout(location = 0) out vec4 fragColor;
-uniform sampler2D texture;
+uniform sampler2D tex;
 uniform vec2 scenePos;
 in vec2 texCoord;
 
@@ -77,5 +77,5 @@ void main(void)
 	
 	float noise = movingNoise(uv* 500. *sin(65.0001));
 
-	fragColor = vec4(col * noise,texture2D(texture,texCoord).a);
+	fragColor = vec4(col * noise,texture(tex,texCoord).a);
 }

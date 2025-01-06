@@ -7,7 +7,7 @@
 layout(location = 0) out vec4 fragColor;
 layout(pixel_center_integer) in vec4 gl_FragCoord;
 
-uniform sampler2D texture;
+uniform sampler2D tex;
 
 uniform vec2 resolution;
 in vec2 texCoord;
@@ -31,24 +31,24 @@ void main(void)
     float Start = 2.0 / 14.0;
 	vec2 Scale = size * iRenderScale / resolution.xy;
 	if (bool(perpixel_size)) {
-		Scale *= texture2D(texture, (gl_FragCoord.xy-iChannelOffset[1].xy)/resolution.xy).x;
+		Scale *= texture(tex, (gl_FragCoord.xy-iChannelOffset[1].xy)/resolution.xy).x;
 	}
     
-    vec4 N0 = texture2D(texture, uv + Circle(Start, 14.0, 0.0) * Scale).rgba;
-    vec4 N1 = texture2D(texture, uv + Circle(Start, 14.0, 1.0) * Scale).rgba;
-    vec4 N2 = texture2D(texture, uv + Circle(Start, 14.0, 2.0) * Scale).rgba;
-    vec4 N3 = texture2D(texture, uv + Circle(Start, 14.0, 3.0) * Scale).rgba;
-    vec4 N4 = texture2D(texture, uv + Circle(Start, 14.0, 4.0) * Scale).rgba;
-    vec4 N5 = texture2D(texture, uv + Circle(Start, 14.0, 5.0) * Scale).rgba;
-    vec4 N6 = texture2D(texture, uv + Circle(Start, 14.0, 6.0) * Scale).rgba;
-    vec4 N7 = texture2D(texture, uv + Circle(Start, 14.0, 7.0) * Scale).rgba;
-    vec4 N8 = texture2D(texture, uv + Circle(Start, 14.0, 8.0) * Scale).rgba;
-    vec4 N9 = texture2D(texture, uv + Circle(Start, 14.0, 9.0) * Scale).rgba;
-    vec4 N10 = texture2D(texture, uv + Circle(Start, 14.0, 10.0) * Scale).rgba;
-    vec4 N11 = texture2D(texture, uv + Circle(Start, 14.0, 11.0) * Scale).rgba;
-    vec4 N12 = texture2D(texture, uv + Circle(Start, 14.0, 12.0) * Scale).rgba;
-    vec4 N13 = texture2D(texture, uv + Circle(Start, 14.0, 13.0) * Scale).rgba;
-    vec4 N14 = texture2D(texture, uv).rgba;
+    vec4 N0 = texture(tex, uv + Circle(Start, 14.0, 0.0) * Scale).rgba;
+    vec4 N1 = texture(tex, uv + Circle(Start, 14.0, 1.0) * Scale).rgba;
+    vec4 N2 = texture(tex, uv + Circle(Start, 14.0, 2.0) * Scale).rgba;
+    vec4 N3 = texture(tex, uv + Circle(Start, 14.0, 3.0) * Scale).rgba;
+    vec4 N4 = texture(tex, uv + Circle(Start, 14.0, 4.0) * Scale).rgba;
+    vec4 N5 = texture(tex, uv + Circle(Start, 14.0, 5.0) * Scale).rgba;
+    vec4 N6 = texture(tex, uv + Circle(Start, 14.0, 6.0) * Scale).rgba;
+    vec4 N7 = texture(tex, uv + Circle(Start, 14.0, 7.0) * Scale).rgba;
+    vec4 N8 = texture(tex, uv + Circle(Start, 14.0, 8.0) * Scale).rgba;
+    vec4 N9 = texture(tex, uv + Circle(Start, 14.0, 9.0) * Scale).rgba;
+    vec4 N10 = texture(tex, uv + Circle(Start, 14.0, 10.0) * Scale).rgba;
+    vec4 N11 = texture(tex, uv + Circle(Start, 14.0, 11.0) * Scale).rgba;
+    vec4 N12 = texture(tex, uv + Circle(Start, 14.0, 12.0) * Scale).rgba;
+    vec4 N13 = texture(tex, uv + Circle(Start, 14.0, 13.0) * Scale).rgba;
+    vec4 N14 = texture(tex, uv).rgba;
     
     float W = 1.0 / 15.0;
     

@@ -6,7 +6,7 @@ Opengl version 3.3*/
 
 layout(location = 0) out vec4 fragColor;
 layout(pixel_center_integer) in vec4 gl_FragCoord;
-uniform sampler2D texture;
+uniform sampler2D tex;
  in vec2 texCoord;
 uniform vec2 resolution;
 
@@ -21,8 +21,8 @@ vec4 transition(vec2 uv) {
   uv.x*=ar;
   bool nextImage = distance(fract(uv * dots), vec2(0.5, 0.5)) < ( progress / distance(uv, center));
    uv.x/=ar;
-//  return nextImage ? vec4(0.0) : texture2D(texture,uv);
-return nextImage ? texture2D(texture,uv) : vec4(0.0);
+//  return nextImage ? vec4(0.0) : texture(tex,uv);
+return nextImage ? texture(tex,uv) : vec4(0.0);
 }
 
 void main(void)

@@ -2,7 +2,7 @@
 // Rebuild for enve by axiomgraph
 #version 330 core
 layout(location = 0) out vec4 fragColor;
-uniform sampler2D texture;
+uniform sampler2D tex;
 in vec2 texCoord;
 
 uniform float Size; 
@@ -18,10 +18,10 @@ void main(void)
    {
         for (j = -3; j < 3; j++)
         {
-            sum += texture2D(texture, texCoord + vec2(j, i)*Offset*0.01) * Strength;
+            sum += texture(tex, texCoord + vec2(j, i)*Offset*0.01) * Strength;
         }
    }
         {
-            fragColor = sum*sum*0.0075*Size + texture2D(texture, texCoord);
+            fragColor = sum*sum*0.0075*Size + texture(tex, texCoord);
         }
 }

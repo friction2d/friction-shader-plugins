@@ -9,7 +9,7 @@ Rebuit for enve by axiomgraph
 layout(location = 0) out vec4 fragColor;
 layout(pixel_center_integer) in vec4 gl_FragCoord;
 
-uniform sampler2D texture;
+uniform sampler2D tex;
 
 uniform vec2 resolution;
 in vec2 texCoord;
@@ -36,7 +36,7 @@ float normpdf3(in vec3 v, in float sigma)
 void main(void)
 {
 	vec2 uv = gl_FragCoord.xy / resolution.xy;
-	vec3 c = texture2D(texture, uv).rgb;
+	vec3 c = texture(tex, uv).rgb;
 	{
 		//declare stuff
 		int kSize = int(min((MSIZE-1)/2., 1.5*sigma_s*iRenderScale.x));
@@ -59,7 +59,7 @@ void main(void)
 		{
 			for (int j=-kSize; j <= kSize; ++j)
 			{
-				cc = texture2D(texture, uv + (vec2(float(i),float(j))) / resolution.xy).rgb;
+				cc = texture(tex, uv + (vec2(float(i),float(j))) / resolution.xy).rgb;
 				factor = normpdf3(cc-c, sigma_r)*bZ*kernel[kSize+j]*kernel[kSize+i];
 				Z += factor;
 				final_colour += factor*cc;
@@ -68,6 +68,6 @@ void main(void)
 		}
 		
 		
-		fragColor = vec4(final_colour/Z, texture2D(texture,texCoord).a);
+		fragColor = vec4(final_colour/Z, texture(tex,texCoord).a);
 	}
 }

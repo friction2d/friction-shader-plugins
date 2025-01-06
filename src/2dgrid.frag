@@ -28,7 +28,7 @@
 
 layout(location = 0) out vec4 fragColor;
 
-uniform sampler2D texture;
+uniform sampler2D tex;
 
 in vec2 texCoord;
 layout(origin_upper_left) in vec4 gl_FragCoord;
@@ -45,5 +45,5 @@ vec2 uv = texCoord;
 	vec2 top_right = step(vec2(border_width), 1.0 - grid);
 	vec4 color = border_color - (bottom_left.x * bottom_left.y * top_right.x * top_right.y);
 
-  fragColor = vec4(color.rgb,texture2D(texture,texCoord).a);
+  fragColor = vec4(color.rgb,texture(tex,texCoord).a);
 }

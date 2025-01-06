@@ -28,7 +28,7 @@
 
 layout(location = 0) out vec4 fragColor;
 
-uniform sampler2D texture;
+uniform sampler2D tex;
 
 in vec2 texCoord;
 
@@ -38,7 +38,7 @@ uniform float numColors;
 
 void main() {
 	float gamma = gamma_cent*0.01;
-	vec4 color = texture2D(texture, texCoord);
+	vec4 color = texture(tex, texCoord);
 	vec3 c = color.rgb;
 	c = pow(c, vec3(gamma, gamma, gamma));
 	c = c * numColors;
