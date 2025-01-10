@@ -8,7 +8,7 @@
 layout(location = 0) out vec4 fragColor;
 layout( origin_upper_left) in vec4 gl_FragCoord;
 
-uniform sampler2D texture;
+uniform sampler2D tex;
 uniform vec2 resolution;
 
 
@@ -45,15 +45,15 @@ void main() {
 
 	vec3 color = vec3(.5); // initialize color with half value on all channels
     if (bool(invert)) {
-        color += texture2D(texture, texCoord - onePixel).rgb * contrast; 
-	    color -= texture2D(texture, texCoord + onePixel).rgb * contrast;
+        color += texture(tex, texCoord - onePixel).rgb * contrast; 
+	    color -= texture(tex, texCoord + onePixel).rgb * contrast;
     } else {
-	    color -= texture2D(texture, texCoord - onePixel).rgb * contrast; 
-	    color += texture2D(texture, texCoord + onePixel).rgb * contrast;
+	    color -= texture(tex, texCoord - onePixel).rgb * contrast; 
+	    color += texture(tex, texCoord + onePixel).rgb * contrast;
 	}
 	
 	// original color
-	vec4 color0 = texture2D(texture,texCoord);
+	vec4 color0 = texture(tex,texCoord);
 	
 	bool hslmod = bool(hslmode);
 

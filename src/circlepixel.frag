@@ -28,7 +28,7 @@
 
 layout(location = 0) out vec4 fragColor;
 
-uniform sampler2D texture;
+uniform sampler2D tex;
 
 in vec2 texCoord;
 
@@ -51,7 +51,7 @@ vec2 uv = texCoord;
 	
 	float dist = distance(pos, vec2(0.5));
 
-	vec4 c = texture2D(texture, cellpos);
+	vec4 c = texture(tex, cellpos);
 	vec4 COLOR = c * step(0.0, (0.5* c.a) - dist);
     fragColor = vec4(COLOR);
 }

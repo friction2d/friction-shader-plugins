@@ -1,8 +1,0 @@
-<!--Adapted from https://www.shadertoy.com/view/cdfSzH
- Rebuilt for enve by axiomgraph -->
-<ShaderEffect name="Noise Blur" menuPath="Blur">
-    <Properties>
-        <Property name="SIZE" nameUI="Size" type="float" min="0.0" max="1000.0" ini="1.0" step ="1.0" glValue="true"/>
-        <Property name="ITER" nameUI="Samples" type="int" min="0" max="40" ini="32" step ="1" glValue="true"/>
-        </Properties>    
-</ShaderEffect>

@@ -30,7 +30,7 @@
 
 layout(location = 0) out vec4 fragColor;
 
-uniform sampler2D texture;
+uniform sampler2D tex;
 
 in vec2 texCoord;
 layout(pixel_center_integer) in vec4 gl_FragCoord;
@@ -88,7 +88,7 @@ void main(void)
     
 	float shadow = 1.0 - smoothstep (0.0, radius * 2.0, -(d - cyl[DIST]));
    	shadow *= (smoothstep(-radius, radius, (maxt - (cf.x + 1.5 * PI * radius + radius))));
-    vec4 curr = texture2D(texture, tuv / ur, -100.0);
+    vec4 curr = texture(tex, tuv / ur, -100.0);
     curr = cf.y > 0.0 ? curr * cf.y  * (1.0 - shadow): (curr * 0.25 + 0.75) * (-cf.y);
     shadow = smoothstep (0.0, radius * 2.0, (d - cyl[DIST]));
     vec4 next = vec4(0.0,0.0,0.0,0.0)* shadow;

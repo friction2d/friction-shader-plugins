@@ -2,7 +2,7 @@
 // Rebuilt for enve by axiomgraph
 #version 330 core
 layout(location = 0) out vec4 fragColor;
-uniform sampler2D texture;
+uniform sampler2D tex;
 in vec2 texCoord;
 
 
@@ -25,7 +25,7 @@ void main(void)
 
     for (int j = -radius; j <= 0; ++j)  {
         for (int i = -radius; i <= 0; ++i)  {
-            vec3 c = texture2D(texture, uv + vec2(i,j) / tex0).rgb;
+            vec3 c = texture(tex, uv + vec2(i,j) / tex0).rgb;
             m[0] += c;
             s[0] += c * c;
         }
@@ -33,7 +33,7 @@ void main(void)
 
     for (int j = -radius; j <= 0; ++j)  {
         for (int i = 0; i <= radius; ++i)  {
-            vec3 c = texture2D(texture, uv + vec2(i,j) / tex0).rgb;
+            vec3 c = texture(tex, uv + vec2(i,j) / tex0).rgb;
             m[1] += c;
             s[1] += c * c;
         }
@@ -41,7 +41,7 @@ void main(void)
 
     for (int j = 0; j <= radius; ++j)  {
         for (int i = 0; i <= radius; ++i)  {
-            vec3 c = texture2D(texture, uv + vec2(i,j) / tex0).rgb;
+            vec3 c = texture(tex, uv + vec2(i,j) / tex0).rgb;
             m[2] += c;
             s[2] += c * c;
         }
@@ -49,7 +49,7 @@ void main(void)
 
     for (int j = 0; j <= radius; ++j)  {
         for (int i = -radius; i <= 0; ++i)  {
-            vec3 c = texture2D(texture, uv + vec2(i,j) / tex0).rgb;
+            vec3 c = texture(tex, uv + vec2(i,j) / tex0).rgb;
             m[3] += c;
             s[3] += c * c;
         }

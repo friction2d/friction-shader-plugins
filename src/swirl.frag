@@ -8,7 +8,7 @@ layout(location = 0) out vec4 fragColor;
 
 in vec2 texCoord;
 
-uniform sampler2D texture;
+uniform sampler2D tex;
 
 // Swirl effect parameters
 uniform float Radius;
@@ -32,5 +32,5 @@ void main(void) {
     tc = vec2(dot(tc, vec2(c, -s)), dot(tc, vec2(s, c)));
   }
   tc += center;
-  fragColor = texture2D(texture, tc );
+  fragColor = texture(tex, tc );
 }

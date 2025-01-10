@@ -9,7 +9,7 @@
 layout(location = 0) out vec4 fragColor;
 layout(pixel_center_integer) in vec4 gl_FragCoord;
 
-uniform sampler2D texture;
+uniform sampler2D tex;
 
 uniform vec2 resolution;
 in vec2 texCoord;
@@ -72,5 +72,5 @@ void main(void)
 	}
 	vec3 color3 = vec3(1.-1./(1.+color*(.09/float(Itterations*Itterations))));
 	color3 *= color3;
-	fragColor = vec4(vec3(color3.r+color3.g+color3.b),texture2D(texture,texCoord).a);
+	fragColor = vec4(vec3(color3.r+color3.g+color3.b),texture(tex,texCoord).a);
 }

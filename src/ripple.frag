@@ -5,7 +5,7 @@ Opengl version 3.3*/
 #version 330 core
 layout(location = 0) out vec4 fragColor;
 layout(pixel_center_integer) in vec4 gl_FragCoord;
-uniform sampler2D texture;
+uniform sampler2D tex;
 uniform vec2 resolution;
 in vec2 texCoord;
 
@@ -32,7 +32,7 @@ void main(void) {
 	vec2 uv = texCoord + (adj_texcoord/len)*cos((frequency_in)*(len*12.0-evolution_in))*(intensity_in*0.0005);
   
   
-	fragColor = texture2D(texture, uv);
+	fragColor = texture(tex, uv);
 }
 
 

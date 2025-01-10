@@ -1,9 +1,0 @@
-<!-- Adapted from Natron Community plugins " Adapted to Natron by F.Fernandez
- Original code : crok_lowfi Matchbox for Autodesk Flame, https://www.shadertoy.com/view/MdfXDH# "
- Rebuilt for enve by axiomgraph -->
-<ShaderEffect name="8 bit" menuPath="Stylize">
-    <Properties>
-        <Property name="brightness" nameUI="Brightness" type="float" min="0.0" max="10.0" ini="1.0" step ="1.0" glValue="true"/>
-        <Property name="graphicMode" nameUI="Mode" type="int" min="0" max="3" ini="1" step ="1" glValue="true"/>
-    </Properties>
-</ShaderEffect>

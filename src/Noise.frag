@@ -29,7 +29,7 @@
 
 layout(location = 0) out vec4 fragColor;
 
-uniform sampler2D texture;
+uniform sampler2D tex;
 
 in vec2 texCoord;
 layout(origin_upper_left) in vec4 gl_FragCoord;
@@ -71,5 +71,5 @@ void main(void)
   }
   float col = a / float(ITERATIONS);
   col = adjust_contrast(col, contrast +0.2);
-  fragColor = vec4(col,col,col,texture2D(texture,texCoord).a);
+  fragColor = vec4(col,col,col,texture(tex,texCoord).a);
 }

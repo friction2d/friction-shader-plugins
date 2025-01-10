@@ -9,7 +9,7 @@ precision highp float;
 
 layout(location = 0) out vec4 fragColor;
 layout(pixel_center_integer) in vec4 gl_FragCoord;
-uniform sampler2D texture;
+uniform sampler2D tex;
 uniform vec2 resolution;
 in vec2 texCoord;
 
@@ -56,7 +56,7 @@ float noise (in vec2 st) {
 
 vec4 transition (vec2 uv) {
   float ar = resolution.x/resolution.y; // aspect ratio 
-   vec4 from = texture2D(texture,uv);
+   vec4 from = texture(tex,uv);
    vec4 to = vec4(0.0); // for future use
    uv.x*= ar ; // aspect ratio 
   float n = noise(uv * scale);

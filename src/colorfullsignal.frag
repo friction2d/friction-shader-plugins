@@ -5,7 +5,7 @@ Opengl version 3.3*/
 #define PI 3.14159265359
 layout(location = 0) out vec4 fragColor;
 layout(pixel_center_integer) in vec4 gl_FragCoord;
-uniform sampler2D texture;
+uniform sampler2D tex;
 in vec2 texCoord;
 uniform vec2 resolution; 
  
@@ -29,14 +29,14 @@ void main(void){
 	  	
 	if (!bool(RainBow))
 	{
-	color = vec4(color_signal.rgb,texture2D(texture,texCoord).a);
+	color = vec4(color_signal.rgb,texture(tex,texCoord).a);
         }
 
 	d = sin(zoom*d - speed*time);
 	d = abs(d);
 	d = size/d;		
 	color *= d*t;	
-	fragColor = vec4(color.rgb,texture2D(texture,texCoord).a);
+	fragColor = vec4(color.rgb,texture(tex,texCoord).a);
 	
 }
 

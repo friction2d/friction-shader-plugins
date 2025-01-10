@@ -7,7 +7,7 @@ layout(location = 0) out vec4 fragColor;
 
 in vec2 texCoord;
 
-uniform sampler2D texture;
+uniform sampler2D tex;
 uniform vec2 scenePos;
 
 //Global parametres
@@ -93,8 +93,8 @@ void main(void)
 	mouse.x *= scenePos.x / scenePos.y;
 	
     vec2 xy = gl_FragCoord.xy / scenePos.xy;
-    vec4 linker = texture2D(texture,xy);
+    vec4 linker = texture(tex,xy);
 	
 	vec3 c = objects(uv, mouse);
-	fragColor = vec4(c*BGColor.rgb, texture2D(texture,texCoord).a)+linker;
+	fragColor = vec4(c*BGColor.rgb, texture(tex,texCoord).a)+linker;
 }

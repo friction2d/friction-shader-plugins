@@ -8,7 +8,7 @@ precision highp float;
 
 layout(location = 0) out vec4 fragColor;
 
-uniform sampler2D texture;
+uniform sampler2D tex;
 
 in vec2 texCoord;
 
@@ -38,10 +38,10 @@ void main(void)
 
     float lineNoise = pow(rng2(blockS), 8.0) * pow(rng2(blockL), 3.0) - pow(rng(7.2341), 17.0) * 2.;
 
-    vec4 col1 = texture2D(texture, uv);
-    vec4 col2 = texture2D(texture, uv + vec2(lineNoise * 0.05 * rng(5.0), 0));
-    vec4 col3 = texture2D(texture, uv - vec2(lineNoise * 0.05 * rng(31.0), 0));
+    vec4 col1 = texture(tex, uv);
+    vec4 col2 = texture(tex, uv + vec2(lineNoise * 0.05 * rng(5.0), 0));
+    vec4 col3 = texture(tex, uv - vec2(lineNoise * 0.05 * rng(31.0), 0));
 
-	fragColor = vec4(vec3(col1.x, col2.y, col3.z) + noise,texture2D(texture, texCoord).a);
+	fragColor = vec4(vec3(col1.x, col2.y, col3.z) + noise,texture(tex, texCoord).a);
 }
 

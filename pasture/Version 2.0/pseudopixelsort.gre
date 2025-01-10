@@ -1,9 +1,0 @@
-<!-- Adapted from https://godotshaders.com/shader/pseudo-pixel-sorting/
- Rebuilt for enve by axiomgraph 
--->
-<ShaderEffect name="Pseudo Pixel Sorting" menuPath="Distort">
-    <Properties>
-      <Property name="Sort" type="float" min="0.0" max="10.0" ini="0.2" step ="0.1" glValue="true"/>
-      </Properties>
-     
-</ShaderEffect>

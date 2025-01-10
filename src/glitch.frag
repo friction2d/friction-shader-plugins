@@ -2,7 +2,7 @@
 // Rebuild for enve by axiomgraph
 #version 330 core
 layout(location = 0) out vec4 fragColor;
-uniform sampler2D texture;
+uniform sampler2D tex;
 in vec2 texCoord;
 
 uniform bool horizontal_slice = true;
@@ -58,7 +58,7 @@ float THRESHOLD = line_offset_threshold * 1000. / 500; // resolution
 float time_s = mod( time, 32.0 );
 float glitch_threshold = 1.0 - THRESHOLD;
 	vec2 uv = texCoord;
-	vec4 col = texture2D(texture,uv);
+	vec4 col = texture(tex,uv);
 	
 	
 	if ( horizontal_slice )
@@ -75,7 +75,7 @@ float glitch_threshold = 1.0 - THRESHOLD;
 		uv_nm = sat( uv_nm + vec2(max_ofs_size*vt_rnd, 0) );
 		float rnd = rand2( vec2( truncn( time_s, 8.0 )) );
 		uv_nm.y = (rnd>mix(1.0, 0.975, sat(THRESHOLD))) ? 1.0-uv_nm.y : uv_nm.y;
-		vec4 sample1 = texture2D(texture,uv_nm); 
+		vec4 sample1 = texture(tex,uv_nm); 
 		col = sample1;	
 	}
 

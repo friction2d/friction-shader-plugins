@@ -9,7 +9,7 @@ precision mediump float;
 #endif
 
 layout(location = 0) out vec4 fragColor;
-uniform sampler2D texture;
+uniform sampler2D tex;
 uniform vec2 scenePos;
 in vec2 texCoord;
 
@@ -79,5 +79,5 @@ void main(void)
 	vColour *= minl + 0.1;
 	
 	vColour = 1.0 - exp(-vColour);
-	fragColor = vec4(vColour,texture2D(texture,texCoord).a);
+	fragColor = vec4(vColour,texture(tex,texCoord).a);
 }

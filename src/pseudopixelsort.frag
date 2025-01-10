@@ -28,7 +28,7 @@
 
 layout(location = 0) out vec4 fragColor;
 
-uniform sampler2D texture;
+uniform sampler2D tex;
 
 in vec2 texCoord;
 
@@ -44,12 +44,12 @@ void main(void){
 	// Curved melting transition
 	vec2 transitionUV = uv;
 	transitionUV.y += pow(Sort, 2.0 + (Sort * 2.0)) * uv.x * fract(sin(dot(vec2(transitionUV.x), vec2(12.9, 78.2)))* 437.5);
-	fragColor = texture2D(texture, transitionUV);
+	fragColor = texture(tex, transitionUV);
 	
 	// Draw pixel sorting effect behind the melting transition
 	if(transitionUV.y > 1.){
-		fragColor = texture2D(texture, sortUv);
+		fragColor = texture(tex, sortUv);
 	}else{
-		fragColor = texture2D(texture, uv);
+		fragColor = texture(tex, uv);
 	}
 }

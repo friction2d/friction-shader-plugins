@@ -18,7 +18,7 @@
 layout(location = 0) out vec4 fragColor;
 layout(pixel_center_integer) in vec4 gl_FragCoord;
 
-uniform sampler2D texture;
+uniform sampler2D tex;
 uniform vec2 resolution;
 in vec2 texCoord;
 
@@ -126,7 +126,7 @@ vec2 iTexCoord = texCoord;
     // Make the tiles shrink by offsetting the texture lookup towards the edge
     // of the cell.
     vec2 lookupOffset = tileProgress * hex.xy / texScale / (1.0 - tileProgress);
-    oColor            =  texture2D(texture, iTexCoord.st + lookupOffset);
+    oColor            =  texture(tex, iTexCoord.st + lookupOffset);
 
     vec4 glow = uGlowColor;
     vec4 line = uLineColor;

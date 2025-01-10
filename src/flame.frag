@@ -6,7 +6,7 @@
 
 #version 330 core
 layout(location = 0) out vec4 fragColor;
-uniform sampler2D texture;
+uniform sampler2D tex;
 uniform vec2 scenePos;
 in vec2 texCoord;
 
@@ -168,5 +168,5 @@ void main(void)
 
 	if ( clamp_g )
 		fin_color = clamp(fin_color, 0.0, 1.0);
-    fragColor = vec4(fin_color, texture2D(texture,texCoord).a);
+    fragColor = vec4(fin_color, texture(tex,texCoord).a);
 	}

@@ -8,7 +8,7 @@
 layout(location = 0) out vec4 fragColor;
 layout(pixel_center_integer) in vec4 gl_FragCoord;
 
-uniform sampler2D texture;
+uniform sampler2D tex;
 uniform vec2 resolution;
 
 uniform float iTime;
@@ -67,6 +67,6 @@ void main(void)
     DrawScanline( color, uv );
 
     vec2 tuv = gl_FragCoord.xy / resolution.xy;
-    fragColor.xyz 	= color * texture2D(texture, tuv).xyz;
-    fragColor.w		= texture2D(texture,texCoord).a;
+    fragColor.xyz 	= color * texture(tex, tuv).xyz;
+    fragColor.w		= texture(tex,texCoord).a;
 }

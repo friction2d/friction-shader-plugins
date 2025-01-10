@@ -7,7 +7,7 @@ layout(location = 0) out vec4 fragColor;
 
 in vec2 texCoord;
 
-uniform sampler2D texture;
+uniform sampler2D tex;
 
 
 uniform float frequency;
@@ -28,7 +28,7 @@ void main(void) {
 	if (y < 0.0 || y > 1.0 || x < 0.0 || x > 1.0) {
 		discard;
 	} else {
-		vec4 textureColor = texture2D(texture, vec2(x, y));
+		vec4 textureColor = texture(tex, vec2(x, y));
 		fragColor = vec4(
 			textureColor.r,
 			textureColor.g,

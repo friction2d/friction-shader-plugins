@@ -29,7 +29,7 @@
 
 layout(location = 0) out vec4 fragColor;
 layout(origin_upper_left) in vec4 gl_FragCoord;
-uniform sampler2D texture;
+uniform sampler2D tex;
 
 in vec2 texCoord;
 
@@ -76,6 +76,6 @@ void main(void)
 	vec3 clr=vec3(color.r * .2 ,color.g *.2 , color.b * .2);
 	clr/=getGas(p);
 
-	fragColor = vec4( clr, texture2D(texture,texCoord).a );
+	fragColor = vec4( clr, texture(tex,texCoord).a );
 
 }

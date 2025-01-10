@@ -7,7 +7,7 @@
 
 layout(location = 0) out vec4 fragColor;
 
-uniform sampler2D texture;
+uniform sampler2D tex;
 
 in vec2 texCoord;
 
@@ -19,9 +19,9 @@ uniform float opacity;
 void main(void)
 {
     
-    vec4 color =  texture2D(texture, texCoord);
+    vec4 color =  texture(tex, texCoord);
     float gray = length(color.rgb);
     vec3 col =vec3(step(edge/10.0, length(vec2(dFdx(gray), dFdy(gray)))));
-    vec3 col2 =  texture2D(texture, texCoord).rgb;
+    vec3 col2 =  texture(tex, texCoord).rgb;
     fragColor = vec4(mix(col,col2,mixxer), opacity);
 }

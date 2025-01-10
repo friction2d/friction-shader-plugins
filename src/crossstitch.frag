@@ -14,7 +14,7 @@ Rebuilt for enve by axiomgraph
 layout(location = 0) out vec4 fragColor;
 layout(pixel_center_integer) in vec4 gl_FragCoord;
 
-uniform sampler2D texture;
+uniform sampler2D tex;
 
 uniform vec2 resolution;
 in vec2 texCoord;
@@ -46,12 +46,12 @@ vec4 PostFX(sampler2D tex, vec2 uv, float iTime) {
 		if (!bool(invert))
 			c = vec4(0.2, 0.15, 0.05, 1.0);
 		else
-			c = texture2D(texture, tlPos * vec2(1.0/resolution.x, 1.0/resolution.y)) * 1.4;
+			c = texture(tex, tlPos * vec2(1.0/resolution.x, 1.0/resolution.y)) * 1.4;
 	}
 	else
 	{
 		if (!bool(invert))
-			c = texture2D(texture, tlPos * vec2(1.0/resolution.x, 1.0/resolution.y)) * 1.4;
+			c = texture(tex, tlPos * vec2(1.0/resolution.x, 1.0/resolution.y)) * 1.4;
 		else
 			c = vec4(0.0, 0.0, 0.0, 1.0);
 	}
@@ -60,5 +60,5 @@ vec4 PostFX(sampler2D tex, vec2 uv, float iTime) {
 
 void main(void) {
 	vec2 uv = texCoord;
-	fragColor = PostFX(texture, uv, iTime);
+	fragColor = PostFX(tex, uv, iTime);
 }

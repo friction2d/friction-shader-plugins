@@ -8,7 +8,7 @@ precision mediump float;
 
 layout(location = 0) out vec4 fragColor;
 layout(pixel_center_integer) in vec4 gl_FragCoord;
-uniform sampler2D texture;
+uniform sampler2D tex;
 uniform vec2 resolution;
 in vec2 texCoord;
 
@@ -54,7 +54,7 @@ float getWave(vec2 p){
 vec4 transition(vec2 p) {
   float dist = distance(center, p);
   float m = getGradient(getWave(p), dist);
-  vec4 cfrom = texture2D(texture,p);
+  vec4 cfrom = texture(tex,p);
   vec4 cto =vec4(0.0); // for future use
   return mix(mix(cfrom, cto, m), mix(cfrom, vec4(color), 0.75), step(m, -2.0));
 }

@@ -1,9 +1,0 @@
-<!-- Ported from Natron Plugins 
-       Crok_crosshatch
- Rebuilt for enve by axiomgraph-->
-<ShaderEffect name="Cross hatch" menuPath="Stylize">
-    <Properties>
-        <Property name="pDensity" nameUI="Density" type="float" min="1.0" max="30.0" ini="8.0" step ="0.01" glValue="true"/>
-        <Property name="pWidth"  nameUI="Width" type="float" min="0.3" max="10.0" ini="3.00" step ="0.01" glValue="true"/>
-        </Properties>
-  </ShaderEffect>

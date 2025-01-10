@@ -28,7 +28,7 @@
 
 layout(location = 0) out vec4 fragColor;
 
-uniform sampler2D texture;
+uniform sampler2D tex;
 
 in vec2 texCoord;
 
@@ -139,14 +139,14 @@ float avg_intensity(vec4 pix)
 
 vec4 get_pixel(vec2 coords, float dx, float dy) 
 {
- return texture2D(texture,coords + vec2(dx, dy));
+ return texture(tex,coords + vec2(dx, dy));
 }
 
 // returns pixel color
 float IsEdge(in vec2 coords)
 {
-	float dxtex = 1.0 /float(textureSize(texture,0)) ;
-	float dytex = 1.0 /float(textureSize(texture,0));
+	float dxtex = 1.0 /float(textureSize(tex,0)) ;
+	float dytex = 1.0 /float(textureSize(tex,0));
 	float pix[9];
 	int k = -1;
 	float delta;
@@ -174,7 +174,7 @@ float IsEdge(in vec2 coords)
 void main() {
 	vec2 uv = texCoord.xy;
 	vec4 tc = vec4(1.0, 0.0, 0.0, 1.0);
-	vec3 colorOrg = texture2D(texture, uv).rgb;
+	vec3 colorOrg = texture(tex, uv).rgb;
 	vec3 vHSV =  RGBtoHSV(colorOrg.r,colorOrg.g,colorOrg.b);
 
 	// hue limiting	

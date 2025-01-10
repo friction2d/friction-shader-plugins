@@ -19,7 +19,7 @@
 layout(location = 0) out vec4 fragColor;
 layout(pixel_center_integer) in vec4 gl_FragCoord;
 
-uniform sampler2D texture;
+uniform sampler2D tex;
 uniform vec2 resolution;
 
 
@@ -32,7 +32,7 @@ uniform vec4 color;
 #define tau 6.2831853
 
 mat2 makem2(in float theta){float c = cos(theta);float s = sin(theta);return mat2(c,-s,s,c);}
-float noise( in vec2 x ){return texture2D(texture, x*.01).x;}
+float noise( in vec2 x ){return texture(tex, x*.01).x;}
 
 float fbm(in vec2 p)
 {	
@@ -84,5 +84,5 @@ void main(void)
 	//final color
 	vec3 col = color.rgb/rz;
 	col=pow(abs(col),vec3(.99));
-	fragColor = vec4(col,texture2D(texture,texCoord).a);
+	fragColor = vec4(col,texture(tex,texCoord).a);
 }

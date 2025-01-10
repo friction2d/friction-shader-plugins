@@ -6,7 +6,7 @@
 
 layout(location = 0) out vec4 fragColor;
 
-uniform sampler2D texture;
+uniform sampler2D tex;
 
 in vec2 texCoord;
 layout(pixel_center_integer) in vec4 gl_FragCoord;
@@ -70,7 +70,7 @@ vec4 pic(float v, vec2 uv, vec2 sp){
     vec2 uv1 = (uv - sp) * m1 + sp;
     vec2 uv2 = (uv - sp) * m2 + sp;
     
-    vec4 colA = texture2D( texture, fract(uv1) );
+    vec4 colA = texture(tex, fract(uv1) );
     vec4 colB = vec4(0.0,0.0,0.0,0.0);
     
     return mix(colA, colB, v);

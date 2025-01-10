@@ -1,9 +1,0 @@
-<!-- Adapted from https://www.shadertoy.com/view/7dj3Dh
- Rebuilt for enve by axiomgraph-->
-<ShaderEffect name="Wind" menuPath="Transitions">
-    <Properties>
-            <Property name="time" nameUI="Time" type="float" min="-1.0" max="1.0" ini="0.5" step ="0.1" glValue="true"/>
-            <Property name="size" nameUI="Size" type="float" min="0.0" max="100.0" ini="0.1" step ="0.1" glValue="true"/>
-            <Property name="lefttoright" nameUI="From Left" type="int" min="0" max="1" ini="0" step ="1" glValue="true"/>
-      </Properties>
-   </ShaderEffect>

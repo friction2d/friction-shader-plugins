@@ -7,7 +7,7 @@ layout(location = 0) out vec4 fragColor;
 layout(pixel_center_integer) in vec4 gl_FragCoord;
 in vec2 texCoord;
 
-uniform sampler2D texture;
+uniform sampler2D tex;
 uniform vec2 scenePos;
 uniform int SAMPLES;
 uniform float amount; 
@@ -32,7 +32,7 @@ vec3 circle_blur(sampler2D sp, vec2 uv, vec2 scale) {
 
     for (int a = 0; a < 360; a += 360 / ANGLE_SAMPLES) {
         for (int o = 0; o < OFFSET_SAMPLES; ++o) {
-			col += texture2D(sp, uv + ps * rot2D(float(o), float(a))).rgb * float(o * o);
+			col += texture(sp, uv + ps * rot2D(float(o), float(a))).rgb * float(o * o);
             accum += float(o * o);
         }
     }
@@ -48,7 +48,7 @@ void main(void)
   vec2 dir = vec2(1.0);
   dir = vec2(dir.x / aspect, dir.y * aspect);
   vec2 uv = ( gl_FragCoord.xy / scenePos.xy);;
-  vec3 col = circle_blur(texture, uv, dir);
+  vec3 col = circle_blur(tex, uv, dir);
   fragColor = vec4(col, 1.0);
 }
 

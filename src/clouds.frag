@@ -7,7 +7,7 @@
 layout(location = 0) out vec4 fragColor;
 layout(origin_upper_left) in vec4 gl_FragCoord;
 
-uniform sampler2D texture;
+uniform sampler2D tex;
 uniform vec2 scenePos;
 
 in vec2 texCoord;
@@ -123,5 +123,5 @@ void main(void) {
     
     vec3 result = mix(skycolour, clamp(skytint * skycolour + cloudcolour, 0.0, 1.0), clamp(f + c, 0.0, 1.0));
     
-	fragColor = vec4( result, texture2D(texture,texCoord).a );
+	fragColor = vec4( result, texture(tex,texCoord).a );
 }

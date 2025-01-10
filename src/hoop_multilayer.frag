@@ -5,7 +5,7 @@
 layout(location = 0) out vec4 fragColor;
 layout(pixel_center_integer) in vec4 gl_FragCoord;
 
-uniform sampler2D texture;
+uniform sampler2D tex;
 uniform vec2 resolution;
 in vec2 texCoord;
 
@@ -59,7 +59,7 @@ void main(void)
 	//mouse -= 0.5;
 	mouse.x *= resolution.x / resolution.y;
 	
-    vec4 linker = texture2D(texture,texCoord);
+    vec4 linker = texture(tex,texCoord);
 	
 	vec3 c = ring(uv, mouse, Radius, Thickness*globalSize);
 	

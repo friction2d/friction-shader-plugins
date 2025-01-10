@@ -6,7 +6,7 @@ Opengl version 3.3*/
 precision highp float;
 layout(location = 0) out vec4 fragColor;
 layout(pixel_center_integer) in vec4 gl_FragCoord;
-uniform sampler2D texture;
+uniform sampler2D tex;
 in vec2 texCoord;
 uniform vec2 resolution;  
  
@@ -100,5 +100,5 @@ void main(void) {
 	col +=vec3(0.,0.2 * abs(sin(time)),0.5 + sin(time) * 0.2);
 
 
-	fragColor = vec4(col ,texture2D(texture,texCoord).a - t * (0.02 + 0.02 * sin (time)));
+	fragColor = vec4(col ,texture(tex,texCoord).a - t * (0.02 + 0.02 * sin (time)));
 }

@@ -6,7 +6,7 @@
 
 layout(location = 0) out vec4 fragColor;
 layout(origin_upper_left) in vec4 gl_FragCoord;
-uniform sampler2D texture;
+uniform sampler2D tex;
 uniform vec2 scenePos;
 in vec2 texCoord;
 
@@ -100,5 +100,5 @@ void main(void) {
     hsv.z *= hsv.y * 1.13;
     hsv.y = (2.2-hsv.z*.9)*1.20;
     color = hsv2rgb(hsv);
-    fragColor = vec4(color.x, color.y, color.z, texture2D(texture,texCoord).a);
+    fragColor = vec4(color.x, color.y, color.z, texture(tex,texCoord).a);
 }

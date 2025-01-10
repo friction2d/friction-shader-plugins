@@ -7,7 +7,7 @@
 // Opengl version 3.3
 #version 330 core
 layout(location = 0) out vec4 fragColor;
-uniform sampler2D texture;
+uniform sampler2D tex;
 uniform vec2 scenePos;
 in vec2 texCoord;
 layout(pixel_center_integer) in vec4 gl_FragCoord;
@@ -47,5 +47,5 @@ void main(void)
 	vec3 p = vec3(uvs / zoom, 0) + vec3(1., -1.3, 0.);
 	p += .2 * vec3(offset.x, offset.y, myGlobalTime / seed);
 	float t = field(p);
-    fragColor = mix(0.1, 1.0, gain) * vec4(color.r * t * t * t, color.g *t * t, color.b * t, texture2D(texture,texCoord).a );
+    fragColor = mix(0.1, 1.0, gain) * vec4(color.r * t * t * t, color.g *t * t, color.b * t, texture(tex,texCoord).a );
 } 

@@ -4,7 +4,7 @@
  Opengl version 3.3 */
 #version 330 core
 layout(location = 0) out vec4 fragColor;
-uniform sampler2D texture;
+uniform sampler2D tex;
 
 in vec2 texCoord;
 
@@ -37,7 +37,7 @@ void main(void)
 	}
 	c /= float(Detail);
 	c = 1.5-sqrt(pow(c,3.0*0.5));
-	fragColor = vec4(vec3(c*c*c*c*Colour.r,c*c*c*c*Colour.g,c*c*c*c*Colour.b), texture2D(texture,texCoord).a);
+	fragColor = vec4(vec3(c*c*c*c*Colour.r,c*c*c*c*Colour.g,c*c*c*c*Colour.b), texture(tex,texCoord).a);
 
 }
 

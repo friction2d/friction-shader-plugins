@@ -6,7 +6,7 @@
 layout(location = 0) out vec4 fragColor;
 layout(pixel_center_integer) in vec4 gl_FragCoord;
 
-uniform sampler2D texture;
+uniform sampler2D tex;
 uniform vec2 resolution;
 in vec2 texCoord;
 
@@ -115,8 +115,8 @@ void main(void)
              
   float ink1 =ink(uv + vec2(0.0, 0.) * vec2(sin(1.0 * 1264.), cos(1.0 * 12645.)), shape, size) ;
     
-    col = mix(vec3(0.0),texture2D(texture,texCoord).rgb,ink1);
+    col = mix(vec3(0.0),texture(tex,texCoord).rgb,ink1);
     
-    fragColor = vec4(col,texture2D(texture,texCoord).a*ink1);
+    fragColor = vec4(col,texture(tex,texCoord).a*ink1);
 }
 

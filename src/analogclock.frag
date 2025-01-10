@@ -7,7 +7,7 @@ Rebuilt for enve by axiomgraph
 layout(location = 0) out vec4 fragColor;
 layout(origin_upper_left) in vec4 gl_FragCoord;
 
-uniform sampler2D texture;
+uniform sampler2D tex;
 
 uniform vec2 resolution;
 in vec2 texCoord;
@@ -141,7 +141,7 @@ void main(void)
     circle = circleShape(center, uv, 0.0125);
     col = mix(col, circleColor, circle);
 
-vec3 alphacomb = col1*texture2D(texture,gl_FragCoord.xy/resolution.xy).a;
+vec3 alphacomb = col1*texture(tex,gl_FragCoord.xy/resolution.xy).a;
 
     // Output to screen
    fragColor = vec4(col,alphacomb);

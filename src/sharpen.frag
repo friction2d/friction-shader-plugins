@@ -10,7 +10,7 @@
 layout(location = 0) out vec4 fragColor;
 layout(pixel_center_integer) in vec4 gl_FragCoord;
 
-uniform sampler2D texture;
+uniform sampler2D tex;
 uniform vec2 resolution;
 
 in vec2 texCoord;
@@ -23,15 +23,15 @@ void main(void)
     
 	vec2 step = 1.0 / resolution.xy;
 	
-	vec3 texA = texture2D( texture, uv + vec2(-step.x, -step.y) * 1.5 ).rgb;
-	vec3 texB = texture2D( texture, uv + vec2( step.x, -step.y) * 1.5 ).rgb;
-	vec3 texC = texture2D( texture, uv + vec2(-step.x,  step.y) * 1.5 ).rgb;
-	vec3 texD = texture2D( texture, uv + vec2( step.x,  step.y) * 1.5 ).rgb;
+	vec3 texA = texture(tex, uv + vec2(-step.x, -step.y) * 1.5 ).rgb;
+	vec3 texB = texture(tex, uv + vec2( step.x, -step.y) * 1.5 ).rgb;
+	vec3 texC = texture(tex, uv + vec2(-step.x,  step.y) * 1.5 ).rgb;
+	vec3 texD = texture(tex, uv + vec2( step.x,  step.y) * 1.5 ).rgb;
    
     vec3 around = 0.25 * (texA + texB + texC + texD);
-	vec3 center  = texture2D( texture, uv ).rgb;
+	vec3 center  = texture(tex, uv ).rgb;
 	
 	vec3 col = center + (center - around) * sharpness;
 	
-    fragColor = vec4(col,texture2D(texture,texCoord).a);
+    fragColor = vec4(col,texture(tex,texCoord).a);
 }

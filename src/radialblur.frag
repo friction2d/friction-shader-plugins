@@ -7,7 +7,7 @@ layout(location = 0) out vec4 fragColor;
 
 in vec2 texCoord;
 
-uniform sampler2D texture;
+uniform sampler2D tex;
 uniform vec2 position;
 uniform float blur;
 uniform int samples; 
@@ -30,7 +30,7 @@ void main(void)
     for (int i = 0; i < samples; i++)
     {
         float scale = blurStart + (float(i)* precompute);
-        color += texture2D(texture, uv * scale + center);
+        color += texture(tex, uv * scale + center);
     }
     
     

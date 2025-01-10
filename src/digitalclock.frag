@@ -5,7 +5,7 @@
 layout(location = 0) out vec4 fragColor;
 layout(origin_upper_left) in vec4 gl_FragCoord;
 
-uniform sampler2D texture;
+uniform sampler2D tex;
 uniform vec2 resolution;
 in vec2 texCoord;
 
@@ -171,19 +171,19 @@ void main(void)
 	if (seg<0.0)
 	{
 		seg = -seg;;
-		fragColor = vec4(seg,seg,seg,texture2D(texture,texCoord).a*seg);
+		fragColor = vec4(seg,seg,seg,texture(tex,texCoord).a*seg);
 	}
 	else
 		if (bool(microwavestyle))
 			if (bool(redgreen))
-				fragColor = vec4(0.0,seg,seg*0.5,texture2D(texture,texCoord).a*seg);
+				fragColor = vec4(0.0,seg,seg*0.5,texture(tex,texCoord).a*seg);
 			else
-				fragColor = vec4(0.0,seg*0.8,seg,texture2D(texture,texCoord).a*seg);
+				fragColor = vec4(0.0,seg*0.8,seg,texture(tex,texCoord).a*seg);
 		else
 			if (bool(redgreen))
-				fragColor = vec4(0.0,seg,0.0,texture2D(texture,texCoord).a*seg);
+				fragColor = vec4(0.0,seg,0.0,texture(tex,texCoord).a*seg);
 			else
-				fragColor = vec4(seg,0.0,0.0,texture2D(texture,texCoord).a*seg);
+				fragColor = vec4(seg,0.0,0.0,texture(tex,texCoord).a*seg);
 	
 }
 

@@ -8,7 +8,7 @@
 layout(location = 0) out vec4 fragColor;
 layout( origin_upper_left) in vec4 gl_FragCoord;
 
-uniform sampler2D texture;
+uniform sampler2D tex;
 uniform vec2 resolution;
 
 
@@ -201,5 +201,5 @@ void main( void) {
         pow(smoothstep(0.0,-0.05,dir.y),0.3));
 
     // post
-        fragColor = vec4(pow(color,vec3(0.75)), texture2D(texture,texCoord).a);
+        fragColor = vec4(pow(color,vec3(0.75)), texture(tex,texCoord).a);
 }

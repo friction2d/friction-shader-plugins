@@ -14,7 +14,7 @@ Rebuilt for enve by axiomgraph
 layout(location = 0) out vec4 fragColor;
 layout(origin_upper_left) in vec4 gl_FragCoord;
 
-uniform sampler2D texture;
+uniform sampler2D tex;
 
 uniform vec2 resolution;
 in vec2 texCoord;
@@ -219,5 +219,5 @@ void main(void) {
 		sparks = sparkLife*sparksGray*sparkcolor.rgb; // spark color
 	}
 	//
-	fragColor = vec4(max(fire,sparks)+smoke,texture2D(texture,texCoord).a);
+	fragColor = vec4(max(fire,sparks)+smoke,texture(tex,texCoord).a);
 }

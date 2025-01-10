@@ -4,7 +4,7 @@
 layout(location = 0) out vec4 fragColor;
 
 
-uniform sampler2D texture;
+uniform sampler2D tex;
 in vec2 texCoord;
 
 uniform float SIZE;
@@ -35,7 +35,7 @@ void main(void)
 	{
 		rv.x=rand(r);
 		rv.y=rand(r);
-		c+=texture2D(texture,uv+rv*p)/float(ITER);
+		c+=texture(tex,uv+rv*p)/float(ITER);
 	}
 	fragColor = c;
 }

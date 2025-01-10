@@ -1,9 +1,0 @@
-<!-- Ported from olive video editor project
- Rebuilt for enve by axiomgraph-->
-<ShaderEffect name="Flip" menuPath="Distort">
-    <Properties>
-        <Property name="horiz" nameUI="Horizontal" type="int" min="0" max="1" ini="1" step="1" glValue="true"/>        
-        <Property name="vert" nameUI="Vertical" type="int" min="0" max="1" ini="0" step="1" glValue="true"/>        
-  
-        </Properties> 
-  </ShaderEffect>

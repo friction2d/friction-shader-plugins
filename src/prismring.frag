@@ -3,7 +3,7 @@ Adapted for enve/friction by axiomgraph
 Opengl version 3.3*/
 #version 330 core
 layout(location = 0) out vec4 fragColor;
-uniform sampler2D texture;
+uniform sampler2D tex;
 uniform vec2 resolution;
 in vec2 texCoord;
 
@@ -65,9 +65,9 @@ void main(void)
 	uv.x *= resolution.x / resolution.y;	
 	vec2 mouse = Position.xy/ resolution.xy;
 	mouse.x *=  resolution.x /  resolution.y;   
-	vec4 linker = texture2D(texture,texCoord);	
+	vec4 linker = texture(tex,texCoord);	
 	vec3 c = ring(uv, mouse, Radius*globalSize, Thickness);	
-	fragColor = vec4(c, texture2D(texture,texCoord).a)+linker;
+	fragColor = vec4(c, texture(tex,texCoord).a)+linker;
 }
 
 

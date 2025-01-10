@@ -8,7 +8,7 @@ layout(location = 0) out vec4 fragColor;
 
 in vec2 texCoord;
 
-uniform sampler2D texture;
+uniform sampler2D tex;
 
 
 const float PI = 3.1415926535;
@@ -33,7 +33,7 @@ void main(void) {
 	float d = length(xy);
 	uv = distort(xy, offset);
 	if (uv.x >= 0.0 && uv.x <= 1.0 && uv.y >= 0.0 && uv.y <= 1.0) {
-		fragColor = texture2D(texture, uv);
+		fragColor = texture(tex, uv);
 	} else {
 		discard;
 	}	

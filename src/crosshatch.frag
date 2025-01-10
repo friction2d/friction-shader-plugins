@@ -6,7 +6,7 @@
 layout(location = 0) out vec4 fragColor;
 
 in vec2 texCoord;
-uniform sampler2D texture;
+uniform sampler2D tex;
 layout(pixel_center_integer) in vec4 gl_FragCoord;
 
 uniform float pDensity; // Density : (density), min=1, max=30
@@ -45,7 +45,7 @@ float d = 1.0; // kernel offset
 float lookup(vec2 p, float dx, float dy)
 {
     vec2 uv = (p.xy + vec2(dx * d, dy * d));
-    vec4 c = texture2D(texture, uv.xy);
+    vec4 c = texture(tex, uv.xy);
 	
 	// return as luma
     return 0.2126*c.r + 0.7152*c.g + 0.0722*c.b;
@@ -66,7 +66,7 @@ void main(void)
 	vec2 uv = srcCoord.xy;
 
 	vec3 res = vec3(1.0, 1.0, 1.0);
-    vec4 tex = texture2D(texture, uv);
+    vec4 tex = texture(tex, uv);
     float brightness = (0.2126*tex.x) + (0.7152*tex.y) + (0.0722*tex.z);
   
     if (brightness < hatch_1) 

@@ -7,7 +7,7 @@ Rebuilt for enve/friction by axiomgraph
 layout(location = 0) out vec4 fragColor;
 layout(origin_upper_left) in vec4 gl_FragCoord;
 
-uniform sampler2D texture;
+uniform sampler2D tex;
 
 uniform vec2 resolution;
 in vec2 texCoord;
@@ -176,5 +176,5 @@ void main(void)
     	light += k * (point[2*i] + point[2*i+1]) * mod(floor(date), 2.0);
     }
     col *= light;
-    fragColor = vec4(col,col*texture2D(texture,texCoord).a);
+    fragColor = vec4(col,col*texture(tex,texCoord).a);
 }

@@ -5,7 +5,7 @@
 layout(location = 0) out vec4 fragColor;
 layout(pixel_center_integer) in vec4 gl_FragCoord;
 
-uniform sampler2D texture;
+uniform sampler2D tex;
 uniform vec2 resolution;
 in vec2 texCoord;
 
@@ -54,7 +54,7 @@ void main(void)
 	float c = sun(uv,mouse,1.);
 	
    
-	vec4 linker = texture2D(texture,texCoord);
+	vec4 linker = texture(tex,texCoord);
 	
 	fragColor = vec4(c*SunColor.rgb,1.0)+linker;
 }

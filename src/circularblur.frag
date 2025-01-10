@@ -24,7 +24,7 @@ built for enve by axiomgraph
  Opengl version 3.3 */
 #version 330 core
 layout(location = 0) out vec4 fragColor;
-uniform sampler2D texture;
+uniform sampler2D tex;
 
 in vec2 texCoord;
 uniform vec2 scenePos;
@@ -65,8 +65,8 @@ void main(void)
     {
     
         v = 0.0+float(i)*0.5*Angle/100.0;
-        Color += texture2D(texture,rotate(uv,origin, v));  //
-        Color += texture2D(texture,rotate(uv,origin, v/-1.0)); 
+        Color += texture(tex,rotate(uv,origin, v));  //
+        Color += texture(tex,rotate(uv,origin, v/-1.0)); 
     }
     Color /= float(Quality*2.0);
     

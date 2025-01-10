@@ -6,7 +6,7 @@
 
 layout(location = 0) out vec4 fragColor;
 
-uniform sampler2D texture;
+uniform sampler2D tex;
 
 in vec2 texCoord;
 layout(pixel_center_integer) in vec4 gl_FragCoord;
@@ -21,7 +21,7 @@ void main(void)
     float m2 = sin(3.14159265 * m);
     
     float parallax = 0.2;
-    vec4 col1 = texture2D(texture, uv + vec2(m*parallax, 0.));
+    vec4 col1 = texture(tex, uv + vec2(m*parallax, 0.));
     vec4 col2 = vec4(0.0,0.0,0.0,0.0);
     
     float curve = uv.y * sin(uv.y + m * 3.1415) * .1 * m2;

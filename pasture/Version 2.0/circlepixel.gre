@@ -1,9 +1,0 @@
-<!-- Adapted from https://godotshaders.com/shader/circle-pixel/
- Rebuilt for enve by axiomgraph 
--->
-<ShaderEffect name="Circle Pixel" menuPath="Stylize">
-    <Properties>
-      <Property name="Amount" type="vec2" min="0.0" max="128.0" ini="30.0" step ="1.0" glValue="true"/>
-      </Properties>
-     
-</ShaderEffect>
