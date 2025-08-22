@@ -1,0 +1,10 @@
+<ShaderEffect name="FakeXYZ" menuPath="Transform">
+    <Properties>
+        <Property name="rotX" nameUI="X" type="float" min="-12.57" max="12.57" ini="0" step="0.010" glValue="true"/>
+        <Property name="rotY" nameUI="Y" type="float" min="-12.57" max="12.57" ini="0" step="0.010" glValue="true"/>
+        <Property name="rotZ" nameUI="Z" type="float" min="-12.57" max="12.57" ini="0" step="0.010" glValue="true"/>
+        <Property name="margin" nameUI="Margin" type="int" min="0" max="99999" ini="0" step="1" glValue="false"/>
+    </Properties>
+    <Margin value="margin"/>
+</ShaderEffect>
+
